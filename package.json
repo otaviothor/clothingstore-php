@@ -1,0 +1,15 @@
+{
+  "name": "clothing-store",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:otaviothor/clothingstore-php.git",
+  "author": "otavio <otaviosilva2632@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "jquery-mask-plugin": "^1.14.16"
+  }
+}
