@@ -14,12 +14,14 @@ $router->namespace("Src\Controllers");
 /** Routes */
 $router->group(null);
 $router->get("/", "WebController:index", "web.index");
-$router->get("/novo", "WebController:create", "web.create");
-$router->post("/store", "WebController:store", "web.store");
-$router->get("/{id}", "WebController:show", "web.show");
-$router->get("/{id}/editar", "WebController:edit", "web.edit");
-$router->put("/{id}/update", "WebController:update", "web.update");
-$router->delete("/{id}", "WebController:destroy", "web.destroy");
+$router->get("/login", "WebController:login", "web.login");
+$router->get("/cadastro", "WebController:register", "web.register");
+// $router->get("/novo", "WebController:create", "web.create");
+// $router->post("/store", "WebController:store", "web.store");
+// $router->get("/{id}", "WebController:show", "web.show");
+// $router->get("/{id}/editar", "WebController:edit", "web.edit");
+// $router->put("/{id}/update", "WebController:update", "web.update");
+// $router->delete("/{id}", "WebController:destroy", "web.destroy");
 
 /** Route errors */
 $router->group("ops");

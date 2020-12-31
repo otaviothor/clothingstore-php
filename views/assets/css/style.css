@@ -1,10 +1,41 @@
-a {
-  text-decoration: none !important;
-}
-
 .header-hero {
   background-image: url(../images/bg.jpg);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.btn-show-password {
+  margin-right: 15px;
+  position: relative;
+  margin-top: -30px !important;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.box-form-register {
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+}
+
+.register-bg {
+  background-image: url(../images/bg4.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.box-form-login {
+  height: 100vh;
+  align-items: center;
+}
+
+.login-bg {
+  background-image: url(../images/bg11.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }

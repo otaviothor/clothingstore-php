@@ -17,7 +17,6 @@ class WebController extends Controller
     parent::__construct($router);
   }
 
-  /** Display a listing of the resource */
   public function index(): void
   {
     echo $this->view->render("home", [
@@ -25,58 +24,18 @@ class WebController extends Controller
     ]);
   }
 
-  /** Show the form for creating a new resource */
-  public function create(): void
+  public function login(): void
   {
-
+    echo $this->view->render("login", [
+      "title" => "wear.up | Login"
+    ]);
   }
 
-  /**
-   * Store a newly created resource in storage
-   * @param array $data
-   */
-  public function store(array $data): void
+  public function register(): void
   {
-
-  }
-
-
-  /**
-   * Display the specified resource
-   * @param array $data
-   */
-  public function show(array $data): void
-  {
-
-  }
-
-
-  /**
-   * Show the form for editing the specified resource
-   * @param array $data
-   */
-  public function edit(array $data): void
-  {
-
-  }
-
-
-  /**
-   * Update the specified resource in storage
-   * @param array $data
-   */
-  public function update(array $data): void
-  {
-
-  }
-
-  /**
-   * Remove the specified resource from storage
-   * @param array $data
-   */
-  public function destroy(array $data): void
-  {
-
+    echo $this->view->render("register", [
+      "title" => "wear.up | Cadastro"
+    ]);
   }
 
   /**
@@ -85,6 +44,5 @@ class WebController extends Controller
    */
   public function error(array $data): void
   {
-
   }
 }

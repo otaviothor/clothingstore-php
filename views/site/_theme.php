@@ -20,7 +20,7 @@
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand link-highlight" href="<?= $router->route(" web.home"); ?>">
+      <a class="navbar-brand link-highlight" href="<?= $router->route("web.home"); ?>">
         <i class="fas fa-tshirt"></i> wear.up
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile" aria-controls="navMobile" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
       <div class="collapse navbar-collapse" id="navMobile">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a href="<?= $router->route(""); ?>" class="nav-link d-none d-sm-block d-md-none">home</a>
+            <a href="<?= $router->route("web.index"); ?>" class="nav-link d-none d-sm-block d-md-none">home</a>
           </li>
           <li class="nav-item">
             <a href="<?= $router->route(""); ?>" class="nav-link d-none d-sm-block d-md-none">marcas</a>
@@ -38,15 +38,15 @@
             <a href="<?= $router->route(""); ?>" class="nav-link d-none d-sm-block d-md-none">categorias</a>
           </li>
           <li class="nav-item">
-            <a href="<?= $router->route(""); ?>" class="nav-link d-none d-sm-block d-md-none">cadastro</a>
+            <a href="<?= $router->route("web.register"); ?>" class="nav-link d-none d-sm-block d-md-none">cadastro</a>
           </li>
           <li class="nav-item">
-            <a href="<?= $router->route(""); ?>" class="nav-link d-none d-sm-block d-md-none">login</a>
+            <a href="<?= $router->route("web.login"); ?>" class="nav-link d-none d-sm-block d-md-none">login</a>
           </li>
 
 
           <li class="nav-item">
-            <a href="<?= $router->route(""); ?>" class="nav-link mr-3 d-none d-md-block">home</a>
+            <a href="<?= $router->route("web.index"); ?>" class="nav-link mr-3 d-none d-md-block">home</a>
           </li>
           <li class="nav-item">
             <a href="<?= $router->route(""); ?>" class="nav-link mr-3 d-none d-md-block">marcas</a>
@@ -55,10 +55,10 @@
             <a href="<?= $router->route(""); ?>" class="nav-link mr-3 d-none d-md-block">categorias</a>
           </li>
           <li class="nav-item">
-            <a href="<?= $router->route(""); ?>" class="btn btn-outline-light mr-3 d-none d-md-block">cadastro</a>
+            <a href="<?= $router->route("web.register"); ?>" class="btn btn-outline-light mr-3 d-none d-md-block">cadastro</a>
           </li>
           <li class="nav-item">
-            <a href="<?= $router->route(""); ?>" class="btn btn-light d-none d-md-block">login</a>
+            <a href="<?= $router->route("web.login"); ?>" class="btn btn-light d-none d-md-block">login</a>
           </li>
         </ul>
       </div>
@@ -71,7 +71,7 @@
     <div class="container text-light">
       <div class="row py-4 d-flex align-items-center">
         <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-          <h6 class="mb-0"><i class="fas fa-tshirt"></i> wear.up | a marca feita para quem quer se vestir bem</h6>
+          <h6 class="mb-0"><i class="fas fa-tshirt"></i> wear.up | o e-commerce feito para quem quer se vestir bem</h6>
         </div>
         <div class="col-md-6 col-lg-7 text-center text-md-right">
           <a href="https://www.instagram.com/houpa.app" title="Instagram" target="blank" class="text-light">
