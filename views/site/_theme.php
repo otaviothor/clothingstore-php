@@ -21,7 +21,7 @@
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand link-highlight" href="<?= $router->route("web.home"); ?>">
+      <a class="navbar-brand link-highlight" href="<?= $router->route("web.index"); ?>">
         <i class="fas fa-tshirt"></i> wear.up
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile">
