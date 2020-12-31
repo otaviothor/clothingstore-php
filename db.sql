@@ -8,6 +8,7 @@ CREATE TABLE users (
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
   forget VARCHAR(255),
+  photo VARCHAR(255),
   user_type_id INT NOT NULL,
   created_at TIMESTAMP DEFAULT current_TIMESTAMP(),
   updated_at TIMESTAMP DEFAULT '0000-00-00 00:00:00',

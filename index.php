@@ -23,6 +23,10 @@ $router->get("/cadastro", "WebController:register", "web.register");
 // $router->put("/{id}/update", "WebController:update", "web.update");
 // $router->delete("/{id}", "WebController:destroy", "web.destroy");
 
+/** Routes profile */
+$router->group("perfil");
+$router->get("/", "ProfileController:index", "profile.index");
+
 /** Route errors */
 $router->group("ops");
 $router->get("/{errcode}", "WebController:error");

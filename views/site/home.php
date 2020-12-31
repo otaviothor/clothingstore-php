@@ -1,6 +1,6 @@
 <?php $v->layout("_theme"); ?>
 
-<div class="py-5 mt-5 text-center text-white header-hero">
+<div class="py-5 text-center text-white header-hero">
   <div class="py-5 my-5">
     <h1 class="display-4"><i class="fas fa-tshirt"></i> wear.up</h1>
     <p class="lead">o e-commerce feito para quem quer se vestir bem</p>

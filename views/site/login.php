@@ -19,14 +19,14 @@
 
 <body class="login-bg">
 
-  <div class="m-3" style="position: absolute;">
+  <div class="mt-3 ml-3" style="position: absolute;">
     <a class="text-decoration-none" href="<?= $router->route('web.index') ?>">
       <h1 class="text-light rounded-lg"><i class="fas fa-tshirt"></i> wear.up</h1>
     </a>
   </div>
   <div class="container">
     <div class="row d-flex justify-content-center box-form-login">
-      <div class="col-lg-5 col-md-8 col-sm-12 bg-dark p-5 rounded-lg">
+      <div class="col-lg-5 col-md-8 col-sm-12 bg-dark px-5 rounded-lg">
         <a class="text-light text-decoration-none" href="<?= $router->route('web.index') ?>">
           <i class="fas fa-chevron-left"></i> voltar
         </a>

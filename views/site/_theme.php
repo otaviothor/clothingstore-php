@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#343a40">
 
   <title>
     <?= $title; ?>
@@ -18,30 +19,30 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand link-highlight" href="<?= $router->route("web.home"); ?>">
         <i class="fas fa-tshirt"></i> wear.up
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile" aria-controls="navMobile" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMobile">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a href="<?= $router->route("web.index"); ?>" class="nav-link d-none d-sm-block d-md-none">home</a>
+            <a href="<?= $router->route("web.index"); ?>" class="nav-link d-none d-block d-md-none">home</a>
           </li>
           <li class="nav-item">
-            <a href="<?= $router->route(""); ?>" class="nav-link d-none d-sm-block d-md-none">marcas</a>
+            <a href="<?= $router->route(""); ?>" class="nav-link d-none d-block d-md-none">marcas</a>
           </li>
           <li class="nav-item">
-            <a href="<?= $router->route(""); ?>" class="nav-link d-none d-sm-block d-md-none">categorias</a>
+            <a href="<?= $router->route(""); ?>" class="nav-link d-none d-block d-md-none">categorias</a>
           </li>
           <li class="nav-item">
-            <a href="<?= $router->route("web.register"); ?>" class="nav-link d-none d-sm-block d-md-none">cadastro</a>
+            <a href="<?= $router->route("web.register"); ?>" class="nav-link d-none d-block d-md-none">cadastro</a>
           </li>
           <li class="nav-item">
-            <a href="<?= $router->route("web.login"); ?>" class="nav-link d-none d-sm-block d-md-none">login</a>
+            <a href="<?= $router->route("web.login"); ?>" class="nav-link d-none d-block d-md-none">login</a>
           </li>
 
 
