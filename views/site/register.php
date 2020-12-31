@@ -23,7 +23,7 @@
     <div class="row">
       <div class="m-3 d-none d-md-block">
         <a class="text-decoration-none" href="<?= $router->route('web.index') ?>">
-          <h1 class="text-light rounded-lg"><i class="fas fa-tshirt"></i> wear.up</h1>
+          <h2 class="text-light rounded-lg"><i class="fas fa-tshirt"></i> wear.up</h2>
         </a>
       </div>
       <div class="col-lg-5 col-md-6 col-sm-8 col-12 bg-dark offset-lg-7 offset-md-6 offset-sm-4 p-5 box-form-register">

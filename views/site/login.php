@@ -21,7 +21,7 @@
 
   <div class="mt-3 ml-3" style="position: absolute;">
     <a class="text-decoration-none" href="<?= $router->route('web.index') ?>">
-      <h1 class="text-light rounded-lg"><i class="fas fa-tshirt"></i> wear.up</h1>
+      <h2 class="text-light rounded-lg"><i class="fas fa-tshirt"></i> wear.up</h2>
     </a>
   </div>
   <div class="container">

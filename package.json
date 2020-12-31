@@ -10,7 +10,9 @@
     "animate.css": "^4.1.1",
     "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
+    "izitoast": "^1.4.0",
     "jquery": "^3.5.1",
-    "jquery-mask-plugin": "^1.14.16"
+    "jquery-mask-plugin": "^1.14.16",
+    "sweetalert2": "^10.12.6"
   }
 }
