@@ -6,7 +6,7 @@
       <div class="form-login animate__animated animate__fadeIn">
         <form>
           <div class="row d-flex justify-content-center">
-            <div class="col-lg-8 col-md-10 col-12">
+            <div class="col-8">
               <img src="<?= asset("images/avatar.svg") ?>" class="img-fluid image-preview" alt="Responsive image">
             </div>
           </div>
