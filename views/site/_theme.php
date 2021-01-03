@@ -73,10 +73,10 @@
   <footer class="bg-dark">
     <div class="container text-light">
       <div class="row py-4 d-flex align-items-center">
-        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+        <div class="col-lg-6 col-md-8 text-center text-md-left mb-4 mb-md-0">
           <h6 class="mb-0"><i class="fas fa-tshirt"></i> wear.up | o e-commerce feito para quem quer se vestir bem</h6>
         </div>
-        <div class="col-md-6 col-lg-7 text-center text-md-right">
+        <div class="col-lg-6 col-md-4 text-center text-md-right">
           <a href="https://www.instagram.com/houpa.app" title="Instagram" target="blank" class="text-light">
             <i class="fab fa-instagram mr-4"></i>
           </a>

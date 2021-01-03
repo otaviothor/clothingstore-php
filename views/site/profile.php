@@ -5,11 +5,15 @@
     <div class="col-lg-5 col-md-8 col-sm-12 bg-dark p-5 rounded-lg">
       <div class="form-login animate__animated animate__fadeIn">
         <form>
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-8 col-md-10 col-12">
+              <img src="<?= asset("images/avatar.svg") ?>" class="img-fluid image-preview" alt="Responsive image">
+            </div>
+          </div>
           <div class="form-group text-light">
-            <img src="<?= asset("images/bg10.jpg") ?>" class="img-fluid" alt="Responsive image">
-            <div class="custom-file mt-3">
-              <input type="file" class="custom-file-input" id="photo" lang="pt">
-              <label class="custom-file-label" for="photo" data-browse="Selecionar foto">Selecionar foto</label>
+            <div class="mt-3">
+              <label for="photo">Selecionar foto</label>
+              <input type="file" onchange="imagePreview(this)" class="form-control-file input-image" name="photo" id="photo">
             </div>
           </div>
           <div class="form-group text-light">
@@ -37,3 +41,6 @@
     </div>
   </div>
 </div>
+
+<?php $v->start("scripts"); ?>
+<?php $v->end(); ?>
