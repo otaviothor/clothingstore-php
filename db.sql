@@ -10,8 +10,8 @@ CREATE TABLE users (
   forget VARCHAR(255),
   photo VARCHAR(255),
   user_type_id INT NOT NULL,
-  created_at TIMESTAMP DEFAULT current_TIMESTAMP(),
-  updated_at TIMESTAMP DEFAULT '0000-00-00 00:00:00',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (id)
 );
 
@@ -35,10 +35,10 @@ CREATE TABLE cnpj (
   PRIMARY KEY (id)
 );
 
-ALTER TABLE users ADD CONSTRAINT fk_user_type_id FOREIGN KEY (user_type_id) REFERENCES user_type (id) ON DELETE CASCADE
+ALTER TABLE users ADD CONSTRAINT fk_user_type_id FOREIGN KEY (user_type_id) REFERENCES user_type (id) ON DELETE CASCADE;
 
-ALTER TABLE cpf ADD CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+ALTER TABLE cpf ADD CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE;
 
-ALTER TABLE cnpj ADD CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+ALTER TABLE cnpj ADD CONSTRAINT fk_user_id_2 FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE;
 
 INSERT INTO user_type (type) VALUES ("Administrador"), ("Marca"), ("Consumidor");
