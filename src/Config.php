@@ -34,13 +34,3 @@ define('DATA_LAYER_CONFIG', [
     PDO::ATTR_CASE => PDO::CASE_NATURAL
   ]
 ]);
-
-/** Constant for email configuration */
-define("MAIL", [
-  "host" => $_ENV['MAIL_HOST'],
-  "port" => $_ENV['MAIL_PORT'],
-  "user" => $_ENV['MAIL_USERNAME'],
-  "passwd" => $_ENV['MAIL_PASSWORD'],
-  "from_name" => $_ENV['MAIL_FROM_NAME'],
-  "from_email" => $_ENV['MAIL_FROM_ADDRESS']
-]);
