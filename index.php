@@ -16,6 +16,8 @@ $router->group(null);
 $router->get("/", "WebController:index", "web.index");
 $router->get("/login", "WebController:login", "web.login");
 $router->get("/cadastro", "WebController:register", "web.register");
+$router->get("/marcas", "BrandController:register", "brand.index");
+$router->get("/categorias", "CategoryController:register", "category.index");
 // $router->get("/novo", "WebController:create", "web.create");
 // $router->post("/store", "WebController:store", "web.store");
 // $router->get("/{id}", "WebController:show", "web.show");
@@ -29,7 +31,7 @@ $router->get("/", "ProfileController:index", "profile.index");
 
 /** Route errors */
 $router->group("ops");
-$router->get("/{errcode}", "WebController:error");
+$router->get("/{errcode}", "WebController:error", "web.error");
 
 /** Route proccess */
 $router->dispatch();
