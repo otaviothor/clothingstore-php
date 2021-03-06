@@ -88,13 +88,13 @@
           <h6 class="mb-0"><i class="fas fa-tshirt"></i> wear.up | o e-commerce feito para quem quer se vestir bem</h6>
         </div>
         <div class="col-lg-6 col-md-4 text-center text-md-right">
-          <a href="https://www.instagram.com/houpa.app" title="Instagram" target="blank" class="text-light text-decoration-none">
+          <a href="https://www.instagram.com/otaviothor_" title="Instagram" target="blank" class="text-light text-decoration-none">
             <i class="fab fa-instagram mr-4"></i>
           </a>
-          <a href="https://www.facebook.com/houpaapp" title="Facebook" target="blank" class="text-light text-decoration-none">
+          <a href="https://www.facebook.com" title="Facebook" target="blank" class="text-light text-decoration-none">
             <i class="fab fa-facebook mr-4"></i>
           </a>
-          <a href="https://twitter.com/houpaapp" title="Twitter" target="blank" class="text-light text-decoration-none">
+          <a href="https://twitter.com/otaviothor_" title="Twitter" target="blank" class="text-light text-decoration-none">
             <i class="fab fa-twitter"></i>
           </a>
         </div>
