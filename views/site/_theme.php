@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="<?= package("izitoast/dist/css/iziToast.min.css"); ?>" />
   <link rel="stylesheet" href="<?= package("sweetalert2/dist/sweetalert2.min.css"); ?>" />
   <link rel="stylesheet" href="<?= package("animate.css/animate.min.css"); ?>">
+  <?= $v->section("styles"); ?>
   <link rel="stylesheet" href="<?= asset("style.min.css"); ?>" />
 </head>
 

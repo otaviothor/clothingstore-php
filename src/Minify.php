@@ -17,3 +17,8 @@ unset($minJS);
 $minJS = new JS();
 $minJS->add(dirname(__DIR__, 1) . "/views/assets/js/login.js");
 $minJS->minify(dirname(__DIR__, 1) . "/views/assets/login.min.js");
+unset($minJS);
+
+$minJS = new JS();
+$minJS->add(dirname(__DIR__, 1) . "/views/assets/js/cropper.js");
+$minJS->minify(dirname(__DIR__, 1) . "/views/assets/cropper.min.js");
