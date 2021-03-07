@@ -16,18 +16,33 @@ $router->group(null);
 $router->get("/", "WebController:index", "web.index");
 $router->get("/login", "WebController:login", "web.login");
 $router->get("/cadastro", "WebController:register", "web.register");
-$router->get("/marcas", "BrandController:register", "brand.index");
-$router->get("/categorias", "CategoryController:register", "category.index");
-// $router->get("/novo", "WebController:create", "web.create");
-// $router->post("/store", "WebController:store", "web.store");
-// $router->get("/{id}", "WebController:show", "web.show");
-// $router->get("/{id}/editar", "WebController:edit", "web.edit");
-// $router->put("/{id}/update", "WebController:update", "web.update");
-// $router->delete("/{id}", "WebController:destroy", "web.destroy");
+
+/** Routes product */
+$router->group("produtos");
+$router->get("/", "ProductController:index", "product.index");
+$router->get("/{id}", "ProductController:show", "product.show");
+$router->post("/create", "ProductController:create", "product.create");
+$router->post("/update", "ProductController:update", "product.update");
+$router->post("/delete", "ProductController:delete", "product.delete");
+
+/** Routes category */
+$router->group("categorias");
+$router->get("/", "CategoryController:index", "category.index");
+$router->get("/{id}", "CategoryController:show", "category.show");
+$router->post("/create", "CategoryController:create", "category.create");
+$router->post("/update", "CategoryController:update", "category.update");
+$router->post("/delete", "CategoryController:delete", "category.delete");
+
+/** Routes brand */
+$router->group("marcas");
+$router->get("/", "BrandController:index", "brand.index");
+$router->get("/{id}", "BrandController:show", "brand.show");
 
 /** Routes profile */
 $router->group("perfil");
 $router->get("/", "ProfileController:index", "profile.index");
+$router->post("/update", "ProfileController:update", "profile.update");
+$router->post("/delete", "ProfileController:delete", "profile.delete");
 
 /** Route errors */
 $router->group("ops");

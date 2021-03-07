@@ -1,5 +1,5 @@
-CREATE DATABASE template_mvc;
-USE template_mvc;
+CREATE DATABASE wearup;
+USE wearup;
 
 CREATE TABLE users (
   id INT NOT NULL AUTO_INCREMENT,
@@ -9,15 +9,9 @@ CREATE TABLE users (
   password VARCHAR(255) NOT NULL,
   forget VARCHAR(255),
   photo VARCHAR(255),
-  user_type_id INT NOT NULL,
+  user_type INT NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (id)
-);
-
-CREATE TABLE user_type (
-  id INT NOT NULL AUTO_INCREMENT,
-  type VARCHAR(20) NOT NULL,
   PRIMARY KEY (id)
 );
 
@@ -35,10 +29,27 @@ CREATE TABLE cnpj (
   PRIMARY KEY (id)
 );
 
-ALTER TABLE users ADD CONSTRAINT fk_user_type_id FOREIGN KEY (user_type_id) REFERENCES user_type (id) ON DELETE CASCADE;
+CREATE TABLE category (
+  id INT NOT NULL AUTO_INCREMENT,
+  category VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE products (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  description TEXT NOT NULL,
+  price VARCHAR(255) NOT NULL,
+  image VARCHAR(255) NOT NULL,
+  category_id INT NOT NULL,
+  brand_id INT NOT NULL,
+  created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+);
 
 ALTER TABLE cpf ADD CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE;
 
-ALTER TABLE cnpj ADD CONSTRAINT fk_user_id_2 FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE;
+ALTER TABLE cnpj ADD CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE;
 
-INSERT INTO user_type (type) VALUES ("Administrador"), ("Marca"), ("Consumidor");
+ALTER TABLE products ADD CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES category (id) ON DELETE CASCADE;
