@@ -12,3 +12,8 @@ $minCSS->minify(dirname(__DIR__, 1) . "/views/assets/style.min.css");
 $minJS = new JS();
 $minJS->add(dirname(__DIR__, 1) . "/views/assets/js/scripts.js");
 $minJS->minify(dirname(__DIR__, 1) . "/views/assets/scripts.min.js");
+unset($minJS);
+
+$minJS = new JS();
+$minJS->add(dirname(__DIR__, 1) . "/views/assets/js/login.js");
+$minJS->minify(dirname(__DIR__, 1) . "/views/assets/login.min.js");
