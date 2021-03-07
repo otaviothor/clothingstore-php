@@ -20,16 +20,16 @@ class WebController extends Controller
   public function index(): void
   {
     $brand = [
-      "id" => "",
+      "id" => "1",
       "full_name" => "Marca top",
-      "image" => "avatar.png",
+      "image" => "avatar.svg",
     ];
 
     $product = [
-      "id" => "",
+      "id" => "1",
       "name" => "Camiseta",
       "price" => "",
-      "image" => "bg.jpg",
+      "image" => "bg2.jpeg",
     ];
 
     echo $this->view->render("home", [
