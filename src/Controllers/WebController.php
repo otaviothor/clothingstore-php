@@ -116,7 +116,7 @@ class WebController extends Controller
     ];
 
     echo $this->view->render("home", [
-      "title" => "wear.up | Home",
+      "title" => "wear.up | home",
       "products" => $products,
       "brands" => $brands,
     ]);
@@ -125,14 +125,14 @@ class WebController extends Controller
   public function login(): void
   {
     echo $this->view->render("login", [
-      "title" => "wear.up | Login"
+      "title" => "wear.up | login"
     ]);
   }
 
   public function register(): void
   {
     echo $this->view->render("register", [
-      "title" => "wear.up | Cadastro"
+      "title" => "wear.up | cadastro"
     ]);
   }
 

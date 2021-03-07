@@ -41,12 +41,12 @@
           <li class="nav-item d-none d-block d-md-none">
             <a href="<?= $router->route(""); ?>" class="nav-link">categorias</a>
           </li>
-          <!-- <li class="nav-item d-none d-block d-md-none">
+          <li class="nav-item d-none d-block d-md-none">
             <a href="<?= $router->route("web.register"); ?>" class="nav-link">cadastro</a>
           </li>
           <li class="nav-item d-none d-block d-md-none">
             <span class="nav-link" style="cursor: pointer;" data-toggle="modal" data-target="#modal-login">login</span>
-          </li> -->
+          </li>
 
 
           <li class="nav-item d-none d-md-block">
@@ -58,12 +58,8 @@
           <li class="nav-item d-none d-md-block">
             <a href="<?= $router->route(""); ?>" class="nav-link mr-3">categorias</a>
           </li>
-          <!-- <li class="nav-item d-none d-md-block">
-            <a href="<?= $router->route("web.register"); ?>" class="btn btn-outline-light mr-3">cadastro</a>
-          </li>
-          <li class="nav-item d-none d-md-block">
-            <button class="btn btn-light" data-toggle="modal" data-target="#modal-login">login</button>
-          </li> -->
+
+          <!-- dropdown for account  -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
               conta
@@ -74,6 +70,14 @@
               <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-1"></i> sair</a>
             </div>
           </li>
+
+          <!-- buttons for accesss  -->
+          <li class="nav-item d-none d-md-block">
+            <a href="<?= $router->route("web.register"); ?>" class="btn btn-outline-light mr-3">cadastro</a>
+          </li>
+          <li class="nav-item d-none d-md-block">
+            <button class="btn btn-light" data-toggle="modal" data-target="#modal-login">login</button>
+          </li>
         </ul>
       </div>
     </div>
@@ -81,7 +85,7 @@
 
   <?= $v->section("content"); ?>
 
-  <footer class="bg-dark">
+  <footer class="bg-dark mt-auto">
     <div class="container text-light">
       <div class="row py-4 d-flex align-items-center">
         <div class="col-lg-6 col-md-8 text-center text-md-left mb-4 mb-md-0">
@@ -101,59 +105,6 @@
       </div>
     </div>
   </footer>
-
-  <div class="modal fade" id="modal-login" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="form-login animate__animated animate__fadeIn">
-            <h2 class="my-3">faça o logon</h2>
-            <form>
-              <div class="form-group ">
-                <label for="email">e-mail ou nome de usuário <span class="text-danger">*</span></label>
-                <input type="email" id="email" name="email" class="form-control">
-              </div>
-              <div class="form-group ">
-                <label for="password">senha <span class="text-danger">*</span></label>
-                <input type="password" id="password" name="password" class="form-control">
-                <span class="float-right text-dark btn-show-password" style="margin-top: -15px;">
-                  <i class="fa fa-fw fa-eye btn-show-password-icon"></i>
-                </span>
-                <p class="mt-1 text-right">
-                  <a class=" btn-recover-password" href="">
-                    esqueceu sua senha ?
-                  </a>
-                </p>
-              </div>
-              <button class="btn btn-outline-dark btn-block mt-4" type="submit">logar <i class="fas fa-check"></i></button>
-              <p class="mt-3 text-center">
-                não possui conta ?
-                <a class="" href="<?= $router->route('web.register') ?>">
-                  cadastre - se
-                </a>
-              </p>
-            </form>
-          </div>
-          <div class="form-recover-password d-none animate__animated animate__fadeIn">
-            <h2 class="mt-3">recuperar senha</h2>
-            <p class="mb-3">esqueceu senha senha ? não se preocupe, informe seu e-mail de cadastro que enviaremos as instruções pra você</p>
-            <form>
-              <div class="form-group ">
-                <label for="email_recover">e-mail de cadastro <span class="text-danger">*</span></label>
-                <input type="email_recover" id="email_recover" name="email_recover" class="form-control">
-                <p class="mt-1 text-right">
-                  <a class="btn-recover-password" href="">
-                    lembrei minha senha
-                  </a>
-                </p>
-              </div>
-              <button class="btn btn-outline-dark btn-block mt-4 mb-3 next-step" type="submit">enviar solicitação <i class="fas fa-check"></i></button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <script src="<?= package("jquery/dist/jquery.min.js"); ?>"></script>
   <script src="<?= package("axios/dist/axios.min.js"); ?>"></script>

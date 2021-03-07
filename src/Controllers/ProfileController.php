@@ -21,7 +21,7 @@ class ProfileController extends Controller
   public function index(): void
   {
     echo $this->view->render("profile", [
-      "title" => "Otávio Barreto"
+      "title" => "otávio barreto"
     ]);
   }
 
