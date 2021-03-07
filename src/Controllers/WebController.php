@@ -19,8 +19,23 @@ class WebController extends Controller
 
   public function index(): void
   {
+    $brand = [
+      "id" => "",
+      "full_name" => "Marca top",
+      "image" => "avatar.png",
+    ];
+
+    $product = [
+      "id" => "",
+      "name" => "Camiseta",
+      "price" => "",
+      "image" => "bg.jpg",
+    ];
+
     echo $this->view->render("home", [
-      "title" => "wear.up | Home"
+      "title" => "wear.up | Home",
+      "products" => $product,
+      "brands" => $brand,
     ]);
   }
 
