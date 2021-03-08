@@ -2,16 +2,8 @@
 
 namespace Src\Controllers;
 
-/**
- * Class WebController
- * @package Src\Controllers
- */
 class CategoryController extends Controller
 {
-  /**
-   * WebController constructor.
-   * @param $router
-   */
   public function __construct($router)
   {
     parent::__construct($router);
@@ -36,13 +28,5 @@ class CategoryController extends Controller
     echo $this->view->render("register", [
       "title" => "wear.up | Cadastro"
     ]);
-  }
-
-  /**
-   * Show error page with error code
-   * @param array $data
-   */
-  public function error(array $data): void
-  {
   }
 }

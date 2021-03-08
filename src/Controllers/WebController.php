@@ -2,16 +2,8 @@
 
 namespace Src\Controllers;
 
-/**
- * Class WebController
- * @package Src\Controllers
- */
 class WebController extends Controller
 {
-  /**
-   * WebController constructor.
-   * @param $router
-   */
   public function __construct($router)
   {
     parent::__construct($router);
@@ -136,10 +128,6 @@ class WebController extends Controller
     ]);
   }
 
-  /**
-   * Show error page with error code
-   * @param array $data
-   */
   public function error(array $data): void
   {
   }

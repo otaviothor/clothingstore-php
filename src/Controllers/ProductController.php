@@ -2,16 +2,8 @@
 
 namespace Src\Controllers;
 
-/**
- * Class WebController
- * @package Src\Controllers
- */
 class ProductController extends Controller
 {
-  /**
-   * WebController constructor.
-   * @param $router
-   */
   public function __construct($router)
   {
     parent::__construct($router);
@@ -19,7 +11,7 @@ class ProductController extends Controller
 
   public function index(): void
   {
-    echo $this->view->render("home", [
+    echo $this->view->render("products", [
       "title" => "wear.up | Produtos"
     ]);
   }
@@ -38,7 +30,7 @@ class ProductController extends Controller
       "brand" => "Nike Inc. {$data["id"]}",
     ];
 
-    echo $this->view->render("product-show", [
+    echo $this->view->render("product", [
       "title" => $product["name"],
       "product" => $product
     ]);
