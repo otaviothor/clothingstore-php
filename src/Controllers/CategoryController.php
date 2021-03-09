@@ -9,10 +9,95 @@ class CategoryController extends Controller
     parent::__construct($router);
   }
 
-  public function index(): void
+  public function show(array $data): void
   {
-    echo $this->view->render("categories", [
-      "title" => "wear.up | categorias"
+    $products = [
+      [
+        "id" => "1",
+        "name" => "{$data["id"]} 1",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "2",
+        "name" => "{$data["id"]} 2",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "3",
+        "name" => "{$data["id"]} 3",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "4",
+        "name" => "{$data["id"]} 4",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "5",
+        "name" => "{$data["id"]} 5",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "6",
+        "name" => "{$data["id"]} 6",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "7",
+        "name" => "{$data["id"]} 7",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "8",
+        "name" => "{$data["id"]} 8",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "9",
+        "name" => "{$data["id"]} 9",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "10",
+        "name" => "{$data["id"]} 10",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "11",
+        "name" => "{$data["id"]} 11",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "12",
+        "name" => "{$data["id"]} 12",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "13",
+        "name" => "{$data["id"]} 13",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "14",
+        "name" => "{$data["id"]} 14",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "15",
+        "name" => "{$data["id"]} 15",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "16",
+        "name" => "{$data["id"]} 16",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ],
+    ];
+
+    echo $this->view->render("category", [
+      "title" => $data["id"],
+      "products" => $products
     ]);
   }
 }

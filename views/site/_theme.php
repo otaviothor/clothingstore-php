@@ -33,37 +33,21 @@
       </button>
       <div class="collapse navbar-collapse" id="navMobile">
         <ul class="navbar-nav ml-auto">
+
+          <!-- link mobile -->
           <li class="nav-item d-none d-block d-md-none">
             <a href="<?= $router->route("web.index"); ?>" class="nav-link">home</a>
           </li>
-          <li class="nav-item d-none d-block d-md-none">
-            <a href="<?= $router->route(""); ?>" class="nav-link">marcas</a>
-          </li>
-          <li class="nav-item d-none d-block d-md-none">
-            <a href="<?= $router->route(""); ?>" class="nav-link">categorias</a>
-          </li>
-          <li class="nav-item d-none d-block d-md-none">
-            <a href="<?= $router->route("web.register"); ?>" class="nav-link">cadastro</a>
-          </li>
-          <li class="nav-item d-none d-block d-md-none">
-            <span class="nav-link" style="cursor: pointer;" data-toggle="modal" data-target="#modal-login">login</span>
-          </li>
 
-
+          <!-- link desktop -->
           <li class="nav-item d-none d-md-block">
             <a href="<?= $router->route("web.index"); ?>" class="nav-link mr-3">home</a>
           </li>
-          <li class="nav-item d-none d-md-block">
-            <a href="<?= $router->route(""); ?>" class="nav-link mr-3">marcas</a>
-          </li>
-          <li class="nav-item d-none d-md-block">
-            <a href="<?= $router->route(""); ?>" class="nav-link mr-3">categorias</a>
-          </li>
 
-          <!-- dropdown for account  -->
+          <!-- dropdown desktop and mobile -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
-              conta
+              categorias
             </a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="<?= $router->route("profile.index") ?>"><i class="far fa-user-circle mr-1"></i> minha conta</a>
@@ -72,13 +56,42 @@
             </div>
           </li>
 
-          <!-- buttons for accesss  -->
-          <li class="nav-item d-none d-md-block">
-            <a href="<?= $router->route("web.register"); ?>" class="btn btn-outline-light mr-3">cadastro</a>
+          <!-- link mobile -->
+          <li class="nav-item d-none d-block d-md-none">
+            <a href="<?= $router->route("brand.index"); ?>" class="nav-link">marcas</a>
           </li>
+
+          <!-- link desktop -->
           <li class="nav-item d-none d-md-block">
-            <button class="btn btn-light" data-toggle="modal" data-target="#modal-login">login</button>
+            <a href="<?= $router->route("brand.index"); ?>" class="nav-link mr-3">marcas</a>
           </li>
+
+          <?php if(true) : ?>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                conta
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="<?= $router->route("profile.index") ?>"><i class="far fa-user-circle mr-1"></i> minha conta</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-1"></i> sair</a>
+              </div>
+            </li>
+          <?php else : ?>
+            <li class="nav-item d-none d-block d-md-none">
+              <a href="<?= $router->route("web.register"); ?>" class="nav-link">cadastro</a>
+            </li>
+            <li class="nav-item d-none d-block d-md-none">
+              <a href="<?= $router->route("web.login"); ?>" class="nav-link" >login</a>
+            </li>
+
+            <li class="nav-item d-none d-md-block">
+              <a href="<?= $router->route("web.register"); ?>" class="btn btn-outline-light mr-3">cadastro</a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+              <a href="<?= $router->route("web.login"); ?>" class="btn btn-light">login</a>
+            </li>
+          <?php endif; ?>
         </ul>
       </div>
     </div>
@@ -86,7 +99,7 @@
 
   <?= $v->section("content"); ?>
 
-  <footer class="bg-dark mt-auto">
+  <footer class="bg-dark">
     <div class="container text-light">
       <div class="row py-4 d-flex align-items-center">
         <div class="col-lg-6 col-md-8 text-center text-md-left mb-4 mb-md-0">

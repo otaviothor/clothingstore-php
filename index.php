@@ -27,7 +27,6 @@ $router->post("/delete", "ProductController:delete", "product.delete");
 
 /** Routes category */
 $router->group("categorias");
-$router->get("/", "CategoryController:index", "category.index");
 $router->get("/{id}", "CategoryController:show", "category.show");
 $router->post("/create", "CategoryController:create", "category.create");
 $router->post("/update", "CategoryController:update", "category.update");
