@@ -130,5 +130,8 @@ class WebController extends Controller
 
   public function error(array $data): void
   {
+    echo $this->view->render("error", [
+      "title" => "error {$data["errcode"]} not found"
+    ]);
   }
 }
