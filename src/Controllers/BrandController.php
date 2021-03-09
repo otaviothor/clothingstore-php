@@ -11,22 +11,8 @@ class BrandController extends Controller
 
   public function index(): void
   {
-    echo $this->view->render("home", [
-      "title" => "wear.up | Home"
-    ]);
-  }
-
-  public function login(): void
-  {
-    echo $this->view->render("login", [
-      "title" => "wear.up | Login"
-    ]);
-  }
-
-  public function register(): void
-  {
-    echo $this->view->render("register", [
-      "title" => "wear.up | Cadastro"
+    echo $this->view->render("brands", [
+      "title" => "wear.up | marcas"
     ]);
   }
 }

@@ -11,8 +11,93 @@ class ProductController extends Controller
 
   public function index(): void
   {
+    $products = [
+      [
+        "id" => "1",
+        "name" => "Camiseta 1",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "2",
+        "name" => "Camiseta 2",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "3",
+        "name" => "Camiseta 3",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "4",
+        "name" => "Camiseta 4",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "5",
+        "name" => "Camiseta 5",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "6",
+        "name" => "Camiseta 6",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "7",
+        "name" => "Camiseta 7",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "8",
+        "name" => "Camiseta 8",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "9",
+        "name" => "Camiseta 9",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "10",
+        "name" => "Camiseta 10",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "11",
+        "name" => "Camiseta 11",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "12",
+        "name" => "Camiseta 12",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "13",
+        "name" => "Camiseta 13",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "14",
+        "name" => "Camiseta 14",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "15",
+        "name" => "Camiseta 15",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ], [
+        "id" => "16",
+        "name" => "Camiseta 16",
+        "price" => rand(1, 200),
+        "image" => "bg2.jpeg",
+      ],
+    ];
+
     echo $this->view->render("products", [
-      "title" => "wear.up | Produtos"
+      "title" => "wear.up | produtos",
+      "products" => $products
     ]);
   }
 
