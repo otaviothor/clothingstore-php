@@ -2,10 +2,10 @@
 
 <div class="container my-5">
   <div class="row ">
-    <div class="col-md-7">
+    <div class="col-sm-12 col-md-6 col-lg-7 mb-1">
       <img class="img-fluid" src="<?= asset("images/product/{$product["image"]}") ?>" alt="<?= $product["name"]; ?>">
     </div>
-    <div class="col-md-5">
+    <div class="col-sm-12 col-md-6 col-lg-5">
       <span class="text-muted">
         <a href="<?= $router->route("category.show", ["id" => $product["category_id"]]) ?>" class="text-muted mr-1"><?= $product["category"]; ?></a> | <a href="<?= $router->route("brand.show", ["id" => $product["brand_id"]]) ?>" class="text-muted ml-1"><?= $product["brand"]; ?></a>
       </span>
