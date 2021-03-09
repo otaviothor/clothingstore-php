@@ -39,3 +39,7 @@
   background-size: cover;
   background-attachment: fixed;
 }
+
+.error-bg {
+  overflow-x: hidden;
+}

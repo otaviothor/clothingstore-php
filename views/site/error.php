@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="<?= asset("style.min.css"); ?>" />
 </head>
 
-<body>
+<body class="error-bg">
 
   <div class="mt-3 ml-3" style="position: absolute;">
     <a class="text-decoration-none" href="<?= $router->route('web.index') ?>">
@@ -27,7 +27,11 @@
   <div class="container">
     <div class="row d-flex justify-content-center box-form-login">
       <?php
-        $v->insert("components/error", ["message" => "a página que você pesquisou não está disponível"]);
+        $v->insert("components/error", [
+          "message" => "a página que você pesquisou não está disponível",
+          "btnText" => "voltar a home",
+          "btnLink" => $router->route("web.index"),
+        ]);
       ?>
     </div>
   </div>
