@@ -11,7 +11,7 @@
   <h1 class="mb-3">marcas</h1>
   <div class="row">
     <?php
-    if (! empty($brands)) :
+    if (!empty($brands)) :
       foreach ($brands as $brand) :
         $v->insert("components/card-brand", ["brand" => $brand]);
       endforeach;
@@ -20,7 +20,7 @@
     endif;
    ?>
   </div>
-  <?php if (! empty($brands)) : ?>
+  <?php if (!empty($brands)) : ?>
     <div class="row">
       <div class="col-12 d-flex justify-content-center">
         <a class="text-dark mt-3" href="<?= $router->route("brand.index") ?>">

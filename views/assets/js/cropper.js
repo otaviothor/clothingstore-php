@@ -1,8 +1,9 @@
 $(() => {
-  var modal = $("#modal");
+  var modal = $("#modal-cropper");
+  modal.modal("show");
   var image = document.getElementById("image_upload");
   var cropper;
-  $("#upload_image").on("change", (event) => {
+  $("#upload-image").on("change", (event) => {
     var files = event.target.files;
 
     var done = (url) => {

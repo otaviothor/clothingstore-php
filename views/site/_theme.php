@@ -121,7 +121,6 @@
   </footer>
 
   <script src="<?= package("jquery/dist/jquery.min.js"); ?>"></script>
-  <script src="<?= package("axios/dist/axios.min.js"); ?>"></script>
   <script src="<?= package("bootstrap/dist/js/bootstrap.bundle.min.js"); ?>"></script>
   <script src="<?= package("jquery-mask-plugin/dist/jquery.mask.min.js"); ?>"></script>
   <script src="<?= package("izitoast/dist/js/iziToast.min.js"); ?>"></script>

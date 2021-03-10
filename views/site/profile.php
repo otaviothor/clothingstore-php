@@ -18,7 +18,7 @@
             <div class="mt-3">
               <label for="photo">Selecionar foto</label>
               <!-- <input type="file" onchange="imagePreview(this)" class="form-control-file input-image" name="photo" id="photo"> -->
-              <input type="file" class="form-control-file input-image" name="photo" id="upload_image">
+              <input type="file" class="form-control-file input-image" name="photo" id="upload-image">
             </div>
           </div>
           <div class="form-group text-light">
@@ -48,8 +48,8 @@
   </div>
 </div>
 
-<div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+<div class="modal fade" id="modal-cropper">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
         <div class="text-left mb-2">
@@ -57,15 +57,11 @@
         </div>
         <div class="row">
           <div class="col-11 ml-1 col-lg-7">
-            <img src="" id="image_upload">
-          </div>
-          <div class="col-12 col-lg-4 mt-2">
-            <p class="bold ml-3 mb-0">Preview</p>
-            <div class="preview"></div>
+            <img height="300" src="<?= asset('images/bg11.jpg'); ?>" id="image_upload">
           </div>
         </div>
         <div class="text-right mt-2">
-          <span class="close-modal" data-dismiss="modal">Cancelar</span>
+          <span class="close-modal" data-dismiss="modal">cancelar</span>
           <button type="button" id="crop" class="btn btn-yellow ml-2 px-5">Cortar Imagem</button>
         </div>
       </div>
