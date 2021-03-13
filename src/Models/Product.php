@@ -8,11 +8,11 @@ use CoffeeCode\DataLayer\DataLayer;
  * Class User
  * @package Src\Models
  */
-class User extends DataLayer
+class Product extends DataLayer
 {
   /** User constructor. */
   public function __construct()
   {
-    parent::__construct("users", ["first_name", "last_name", "email", "password"]);
+    parent::__construct("products", ["name", "price", "image", "category_id", "brand_id"]);
   }
 }
