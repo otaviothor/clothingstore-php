@@ -61,3 +61,64 @@ function flash(string $type = null, string $message = null): ?string
 
   return null;
 }
+
+/**
+ * @param string|null $type
+ * @param string|null $name
+ * @param string|null $tmpFile
+ * @return bool
+ */
+function uploadImage(string $type = null, string $name = null, string $tmpFile = null): bool
+{
+  if ($type && $name && $tmpFile) {
+    switch ($type) {
+      case 'product':
+        $path = $file = SITE["root"] . "/views/assets/images/product/";
+        break;
+
+      case 'profile':
+        $path = $file = SITE["root"] . "/views/assets/images/profile/";
+        break;
+
+      default:
+        return false;
+        break;
+    }
+
+    if(move_uploaded_file($tmpFile, $path . $name)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+/**
+ * @param string|null $type
+ * @param string|null $name
+ * @return bool
+ */
+function removeImage(string $type = null, string $name = null): bool
+{
+  if ($type && $name) {
+    switch ($type) {
+      case 'product':
+        $path = $file = SITE["root"] . "/views/assets/images/product/";
+        break;
+
+      case 'profile':
+        $path = $file = SITE["root"] . "/views/assets/images/profile/";
+        break;
+
+      default:
+        return false;
+        break;
+    }
+
+    if(unlink($path . $name)) {
+      return true;
+    }
+  }
+
+  return false;
+}
