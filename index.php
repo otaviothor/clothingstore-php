@@ -20,15 +20,16 @@ $router->get("/cadastro", "WebController:register", "web.register");
 /** Routes product */
 $router->group("produtos");
 $router->get("/", "ProductController:index", "product.index");
+$router->get("/novo", "ProductController:create", "product.create");
 $router->get("/{id}", "ProductController:show", "product.show");
-$router->post("/create", "ProductController:create", "product.create");
+$router->post("/store", "ProductController:store", "product.store");
 $router->post("/update", "ProductController:update", "product.update");
 $router->post("/delete", "ProductController:delete", "product.delete");
 
 /** Routes category */
 $router->group("categorias");
 $router->get("/{id}", "CategoryController:show", "category.show");
-$router->post("/create", "CategoryController:create", "category.create");
+$router->post("/store", "CategoryController:store", "category.store");
 $router->post("/update", "CategoryController:update", "category.update");
 $router->post("/delete", "CategoryController:delete", "category.delete");
 
