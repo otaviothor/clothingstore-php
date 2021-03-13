@@ -101,6 +101,13 @@ class ProductController extends Controller
     ]);
   }
 
+  public function create()
+  {
+    echo $this->view->render("product-form", [
+      "title" => "wear.up | novo produto"
+    ]);
+  }
+
   public function show(array $data): void
   {
     $product = [

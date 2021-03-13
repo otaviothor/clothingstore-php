@@ -16,15 +16,16 @@ $router->group(null);
 $router->get("/", "WebController:index", "web.index");
 $router->get("/login", "WebController:login", "web.login");
 $router->get("/cadastro", "WebController:register", "web.register");
+$router->get("/produtos/{id}", "ProductController:show", "product.show");
 
 /** Routes product */
 $router->group("produtos");
 $router->get("/", "ProductController:index", "product.index");
 $router->get("/novo", "ProductController:create", "product.create");
-$router->get("/{id}", "ProductController:show", "product.show");
 $router->post("/store", "ProductController:store", "product.store");
 $router->post("/update", "ProductController:update", "product.update");
 $router->post("/delete", "ProductController:delete", "product.delete");
+// $router->get("/{id}", "ProductController:show", "product.show");
 
 /** Routes category */
 $router->group("categorias");
