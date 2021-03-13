@@ -7,12 +7,13 @@ $(".btn-show-password").on("click", () => {
   }
 });
 
-const imagePreview = (input) => {
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
-    reader.onload = function (e) {
-      $(".image-preview").attr("src", e.target.result);
+$(".upload-image").on("change", (e) => {
+  const files = e.target.files;
+  if (files && files[0]) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      $(".image-preview").attr("src", reader.result);
     };
-    reader.readAsDataURL(input.files[0]);
+    reader.readAsDataURL(files[0]);
   }
-};
+});

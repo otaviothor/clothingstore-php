@@ -1,9 +1,5 @@
 <?php $v->layout("_theme"); ?>
 
-<?php $v->start("styles"); ?>
-<link rel="stylesheet" href="<?= package("cropperjs/dist/cropper.min.css"); ?>" />
-<?php $v->end(); ?>
-
 <div class="container">
   <div class="row d-flex justify-content-center my-5">
     <div class="col-lg-5 col-md-8 col-sm-12 bg-dark p-5 rounded-lg">
@@ -11,14 +7,13 @@
         <form>
           <div class="row d-flex justify-content-center">
             <div class="col-8">
-              <img src="<?= asset("images/avatar.svg") ?>" class="img-fluid image-preview" alt="Responsive image">
+              <img src="<?= asset("images/avatar.svg") ?>" class="img-fluid image-preview" alt="">
             </div>
           </div>
           <div class="form-group text-light">
             <div class="mt-3">
-              <label for="photo">Selecionar foto</label>
-              <!-- <input type="file" onchange="imagePreview(this)" class="form-control-file input-image" name="photo" id="photo"> -->
-              <input type="file" class="form-control-file input-image" name="photo" id="upload-image">
+              <label for="photo">selecionar foto</label>
+              <input type="file" class="form-control-file upload-image" name="photo">
             </div>
           </div>
           <div class="form-group text-light">
@@ -47,29 +42,3 @@
     </div>
   </div>
 </div>
-
-<div class="modal fade" id="modal-cropper">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="text-left mb-2">
-          <h5 class="bold">Cortar <span class="text-warning">Imagem</span></h5>
-        </div>
-        <div class="row">
-          <div class="col-11 ml-1 col-lg-7">
-            <img height="300" src="<?= asset('images/bg11.jpg'); ?>" id="image_upload">
-          </div>
-        </div>
-        <div class="text-right mt-2">
-          <span class="close-modal" data-dismiss="modal">cancelar</span>
-          <button type="button" id="crop" class="btn btn-yellow ml-2 px-5">Cortar Imagem</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<?php $v->start("scripts"); ?>
-<script src="<?= package("cropperjs/dist/cropper.min.js"); ?>"></script>
-<script src="<?= asset("cropper.min.js"); ?>"></script>
-<?php $v->end(); ?>
