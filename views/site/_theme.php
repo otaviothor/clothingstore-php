@@ -50,9 +50,19 @@
               categorias
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="<?= $router->route("profile.index") ?>"><i class="far fa-user-circle mr-1"></i> minha conta</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-1"></i> sair</a>
+              <?php
+                if (!empty($categories)) :
+                  foreach ($categories as $category) :
+                  ?>
+                    <a class="dropdown-item" href="<?= $router->route("category.show", ["id" => $category["id"]]) ?>"><?= $category["category"] ?></a>
+                  <?php
+                  endforeach;
+                else :
+                  ?>
+                    <a class="dropdown-item" href="#">nenhuma categoria encontrada</a>
+                  <?php
+                endif;
+              ?>
             </div>
           </li>
 

@@ -107,10 +107,33 @@ class WebController extends Controller
       ],
     ];
 
+    $categories = [
+      [
+        "id" => 1,
+        "category" => "blusa",
+      ], [
+        "id" => 2,
+        "category" => "camiseta",
+      ], [
+        "id" => 3,
+        "category" => "calça",
+      ], [
+        "id" => 4,
+        "category" => "shorts",
+      ], [
+        "id" => 5,
+        "category" => "social",
+      ], [
+        "id" => 6,
+        "category" => "suéter",
+      ]
+    ];
+
     echo $this->view->render("home", [
       "title" => "wear.up | home",
       "products" => $products,
       "brands" => $brands,
+      "categories" => $categories,
     ]);
   }
 
