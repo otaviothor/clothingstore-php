@@ -14,51 +14,51 @@ class WebController extends Controller
     $brands = [
       [
         "id" => "1",
-        "full_name" => "Marca top 1",
+        "name" => "Marca top 1",
         "image" => "avatar.svg",
       ], [
         "id" => "2",
-        "full_name" => "Marca top 2",
+        "name" => "Marca top 2",
         "image" => "avatar.svg",
       ], [
         "id" => "3",
-        "full_name" => "Marca top 3",
+        "name" => "Marca top 3",
         "image" => "avatar.svg",
       ], [
         "id" => "4",
-        "full_name" => "Marca top 4",
+        "name" => "Marca top 4",
         "image" => "avatar.svg",
       ], [
         "id" => "5",
-        "full_name" => "Marca top 5",
+        "name" => "Marca top 5",
         "image" => "avatar.svg",
       ], [
         "id" => "6",
-        "full_name" => "Marca top 6",
+        "name" => "Marca top 6",
         "image" => "avatar.svg",
       ], [
         "id" => "7",
-        "full_name" => "Marca top 7",
+        "name" => "Marca top 7",
         "image" => "avatar.svg",
       ], [
         "id" => "8",
-        "full_name" => "Marca top 8",
+        "name" => "Marca top 8",
         "image" => "avatar.svg",
       ], [
         "id" => "9",
-        "full_name" => "Marca top 9",
+        "name" => "Marca top 9",
         "image" => "avatar.svg",
       ], [
         "id" => "10",
-        "full_name" => "Marca top 10",
+        "name" => "Marca top 10",
         "image" => "avatar.svg",
       ], [
         "id" => "11",
-        "full_name" => "Marca top 11",
+        "name" => "Marca top 11",
         "image" => "avatar.svg",
       ], [
         "id" => "12",
-        "full_name" => "Marca top 12",
+        "name" => "Marca top 12",
         "image" => "avatar.svg",
       ]
     ];

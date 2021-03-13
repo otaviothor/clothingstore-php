@@ -7,29 +7,34 @@
         <form>
           <div class="row d-flex justify-content-center">
             <div class="col-8">
-              <img src="<?= asset("images/avatar.svg") ?>" class="img-fluid image-preview" alt="">
+              <img src="<?= asset("images/profile/{$data["image"]}") ?>" class="img-fluid image-preview" alt="">
             </div>
           </div>
           <div class="form-group text-light">
             <div class="mt-3">
-              <label for="photo">selecionar foto</label>
-              <input type="file" class="form-control-file upload-image" name="photo">
+              <label for="image">selecionar foto</label>
+              <input type="file" class="form-control-file upload-image" id="image" name="image">
             </div>
           </div>
           <div class="form-group text-light">
-            <label for="full_name">nome completo</label>
-            <input type="full_name" id="full_name" name="full_name" class="form-control">
+            <label for="name">nome completo</label>
+            <input type="name" id="name" name="name" class="form-control" value="<?= $data["name"] ?>">
           </div>
           <div class="form-group text-light">
             <label for="email">e-mail</label>
-            <input type="email" id="email" name="email" class="form-control">
+            <input type="email" id="email" name="email" class="form-control" value="<?= $data["email"] ?>">
           </div>
           <div class="form-group text-light">
-            <label for="document">cpf</label>
-            <input class="form-control" type="text" id="document" placeholder="000.000.000-00" readonly>
-          </div>
+            <?php if($data["user_type"] === 2) : ?>
+              <label for="document">cnpj</label>
+              <input class="form-control" type="text" id="document" data-mask="00.000.000/0000-00" value="<?= $data["cnpj"] ?>">
+            <?php endif; if($data["user_type"] === 3) : ?>
+              <label for="document">cpf</label>
+              <input class="form-control" type="text" id="document" data-mask="000.000.000-00" value="<?= $data["cpf"] ?>">
+            <?php endif; ?>
+            </div>
           <div class="form-group text-light">
-            <label for="password">senha <span class="text-danger">*</span></label>
+            <label for="password">senha</label>
             <input type="password" id="password" name="password" class="form-control">
             <span class="float-right text-dark btn-show-password" style="margin-top: -15px;">
               <i class="fa fa-fw fa-eye btn-show-password-icon"></i>

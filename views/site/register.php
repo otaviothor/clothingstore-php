@@ -31,16 +31,11 @@
           <i class="fas fa-chevron-left"></i> voltar
         </a>
         <h2 class="my-3 text-light">cadastre - se</h2>
-        <!-- <div class="d-flex justify-content-around mb-3">
-          <span class="badge badge-light" style="font-size: 16px;">1</span>
-          <span class="badge badge-secondary" style="font-size: 16px;">2</span>
-          <span class="badge badge-secondary" style="font-size: 16px;">3</span>
-        </div> -->
         <form>
           <div class="step-1 d-block animate__animated animate__fadeIn">
             <div class="form-group text-light">
-              <label for="full_name">nome completo <span class="text-danger">*</span></label>
-              <input type="text" id="full_name" name="full_name" class="form-control">
+              <label for="name">nome completo <span class="text-danger">*</span></label>
+              <input type="text" id="name" name="name" class="form-control">
             </div>
             <div class="form-group text-light">
               <label for="email">e-mail <span class="text-danger">*</span></label>
