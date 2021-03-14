@@ -47,9 +47,17 @@ class BrandController extends Controller
       ]
     ];
 
+    $brand = [
+      "name" => "loja do otávio",
+      "email" => "lojadootavio@gmail.com",
+      "year" => "2021",
+      "image" => "avatar.svg",
+    ];
+
     echo $this->view->render("brand", [
-      "title" => $data["id"],
+      "title" => $brand["name"],
       "products" => $products,
+      "brand" => $brand,
     ]);
   }
 }
