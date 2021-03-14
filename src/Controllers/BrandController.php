@@ -15,4 +15,11 @@ class BrandController extends Controller
       "title" => "wear.up | marcas"
     ]);
   }
+
+  public function show(array $data): void
+  {
+    echo $this->view->render("brand", [
+      "title" => $data["id"],
+    ]);
+  }
 }
