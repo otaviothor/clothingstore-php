@@ -104,7 +104,8 @@ class ProductController extends Controller
   public function create()
   {
     echo $this->view->render("product-form", [
-      "title" => "wear.up | novo produto"
+      "title" => "wear.up | novo produto",
+      "titleForm" => "cadastrar novo produto"
     ]);
   }
 
