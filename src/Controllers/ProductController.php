@@ -103,9 +103,32 @@ class ProductController extends Controller
 
   public function create()
   {
+    $categories = [
+      [
+        "id" => 1,
+        "category" => "blusa",
+      ], [
+        "id" => 2,
+        "category" => "camiseta",
+      ], [
+        "id" => 3,
+        "category" => "calça",
+      ], [
+        "id" => 4,
+        "category" => "shorts",
+      ], [
+        "id" => 5,
+        "category" => "social",
+      ], [
+        "id" => 6,
+        "category" => "suéter",
+      ]
+    ];
+
     echo $this->view->render("product-form", [
       "title" => "wear.up | novo produto",
-      "titleForm" => "cadastrar novo produto"
+      "titleForm" => "cadastrar novo produto",
+      "categories" => $categories,
     ]);
   }
 

@@ -27,10 +27,22 @@
         <div class="row">
           <div class="col-md-7 col-sm-12 mb-3">
             <div class="form-group">
-              <div class="mt-3">
-                <label for="image">selecionar foto</label>
-                <input type="file" class="form-control-file upload-image" id="image" name="image">
-              </div>
+              <label for="category">categoria</label>
+              <select class="form-control" id="category" name="category_id">
+                <?php
+                  if (!empty($categories)) :
+                    foreach ($categories as $category) :
+                    ?>
+                      <option value="<?= $category["id"] ?>"><?= $category["category"] ?></option>
+                    <?php
+                    endforeach;
+                  else :
+                    ?>
+                      <option>nenhuma categoria encontrada</option>
+                    <?php
+                  endif;
+                ?>
+              </select>
             </div>
           </div>
           <div class="col-md-5 col-sm-12 mb-3">
@@ -42,6 +54,12 @@
                 </div>
                 <input type="text" class="form-control price" id="price" placeholder="199,99" name="price" data-mask="000.000,00" data-mask-reverse="true" />
               </div>
+            </div>
+          </div>
+          <div class="col-md-7 col-sm-12 mb-3">
+            <div class="form-group">
+              <label for="image">selecionar foto</label>
+              <input type="file" class="form-control-file upload-image" id="image" name="image">
             </div>
           </div>
         </div>
