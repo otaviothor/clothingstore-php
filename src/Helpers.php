@@ -42,9 +42,9 @@ function package(string $path): string
 /**
  * @param string|null $type
  * @param string|null $message
- * @return string|null
+ * @return array|null
  */
-function flash(string $type = null, string $message = null): ?string
+function flash(string $type = null, string $message = null): ?array
 {
   if ($type && $message) {
     $_SESSION["flash"] = [
@@ -56,7 +56,7 @@ function flash(string $type = null, string $message = null): ?string
 
   if (!empty($_SESSION["flash"]) && $flash = $_SESSION["flash"]) {
     unset($_SESSION["flash"]);
-    return "<div class=\"message {$flash["type"]}\">{$flash["message"]}</div>";
+    return $flash;
   }
 
   return null;

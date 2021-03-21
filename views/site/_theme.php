@@ -138,6 +138,21 @@
   <script src="<?= asset("scripts.min.js"); ?>"></script>
   <?= $v->section("scripts"); ?>
 
+  <script>
+  <?php
+    // if ($flash() && $flashReturn = $flash()) {
+    //   $type = $flashReturn["type"];
+    //   $message = $flashReturn["message"];
+    //   echo "
+    //   iziToast.$type({
+    //     position: 'topLeft',
+    //     message: '$message'
+    //   });
+    //   ";
+    // }
+  ?>
+  </script>
+
 </body>
 
 </html>
