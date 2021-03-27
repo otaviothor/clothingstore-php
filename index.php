@@ -17,6 +17,7 @@ $router->get("/", "WebController:index", "web.index");
 $router->get("/login", "WebController:login", "web.login");
 $router->get("/cadastro", "WebController:register", "web.register");
 $router->get("/produtos/{id}", "ProductController:show", "product.show");
+$router->get("/categorias/{id}", "CategoryController:show", "category.show");
 
 /** Routes product */
 $router->group("produtos");
@@ -29,7 +30,7 @@ $router->post("/delete", "ProductController:delete", "product.delete");
 
 /** Routes category */
 $router->group("categorias");
-$router->get("/{id}", "CategoryController:show", "category.show");
+$router->get("/novo", "CategoryController:create", "category.create");
 $router->post("/store", "CategoryController:store", "category.store");
 $router->post("/update", "CategoryController:update", "category.update");
 $router->post("/delete", "CategoryController:delete", "category.delete");

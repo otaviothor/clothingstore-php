@@ -100,4 +100,36 @@ class CategoryController extends Controller
       "products" => $products
     ]);
   }
+
+
+  public function create()
+  {
+    $categories = [
+      [
+        "id" => 1,
+        "category" => "blusa",
+      ], [
+        "id" => 2,
+        "category" => "camiseta",
+      ], [
+        "id" => 3,
+        "category" => "calça",
+      ], [
+        "id" => 4,
+        "category" => "shorts",
+      ], [
+        "id" => 5,
+        "category" => "social",
+      ], [
+        "id" => 6,
+        "category" => "suéter",
+      ]
+    ];
+
+    echo $this->view->render("category-form", [
+      "title" => "wear.up | nova categoria",
+      "titleForm" => "cadastrar novo produto",
+      "categories" => $categories,
+    ]);
+  }
 }
