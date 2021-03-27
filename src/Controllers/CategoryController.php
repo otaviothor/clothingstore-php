@@ -128,7 +128,7 @@ class CategoryController extends Controller
 
     echo $this->view->render("category-form", [
       "title" => "wear.up | nova categoria",
-      "titleForm" => "cadastrar novo produto",
+      "titleForm" => "cadastrar nova categoria",
       "categories" => $categories,
     ]);
   }

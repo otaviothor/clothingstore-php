@@ -18,7 +18,7 @@
     else :
       $v->insert("components/404-not-found", ["message" => "nenhuma marca encontrada"]);
     endif;
-   ?>
+    ?>
   </div>
   <?php if (!empty($brands)) : ?>
     <div class="row">
