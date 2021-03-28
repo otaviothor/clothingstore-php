@@ -2,6 +2,8 @@
 
 namespace Src\Controllers;
 
+use Src\Support\Session;
+
 class WebController extends Controller
 {
   public function __construct($router)
@@ -128,6 +130,8 @@ class WebController extends Controller
         "category" => "suéter",
       ]
     ];
+
+    Session::put();
 
     echo $this->view->render("home", [
       "title" => "wear.up | home",
