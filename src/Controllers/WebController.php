@@ -131,7 +131,7 @@ class WebController extends Controller
       ]
     ];
 
-    Session::put();
+    // Session::put();
 
     echo $this->view->render("home", [
       "title" => "wear.up | home",
