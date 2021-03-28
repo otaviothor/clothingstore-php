@@ -1,5 +1,5 @@
 <div class="col-sm-12 col-md-4 col-lg-3 my-3">
-  <div class="card">
+  <div class="card shadow">
     <div class="card-body d-flex justify-content-between">
       <h4 class="card-title"><?= $category["category"] ?></h4>
       <div>
