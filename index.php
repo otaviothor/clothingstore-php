@@ -26,7 +26,6 @@ $router->get("/novo", "ProductController:create", "product.create");
 $router->post("/store", "ProductController:store", "product.store");
 $router->post("/update", "ProductController:update", "product.update");
 $router->post("/delete", "ProductController:delete", "product.delete");
-// $router->get("/{id}", "ProductController:show", "product.show");
 
 /** Routes category */
 $router->group("categorias");

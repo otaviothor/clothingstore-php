@@ -4,7 +4,7 @@
   <h2><?= $titleForm; ?></h2>
   <div class="row">
     <div class="col-12 col-md-8 col-lg-6 mt-5">
-      <form method="post" action="">
+      <form method="post" action="<?= $router->route("category.store") ?>">
         <div class="row">
           <div class="col-12">
             <div class="form-group">
@@ -38,18 +38,3 @@
   </div>
 </div>
 
-<?php
-$v->start("scripts");
-?>
-<script>
-	$("#name").on("keyup", () => {
-		$(".card-title").html($("#name").val())
-	})
-
-	$("#price").on("keyup", () => {
-		$(".card-price").html(`R$ ${$("#price").val()}`)
-	})
-</script>
-<?php
-$v->end();
-?>
