@@ -17,3 +17,8 @@ $(".upload-image").on("change", (e) => {
     reader.readAsDataURL(files[0]);
   }
 });
+
+$(() => {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+
