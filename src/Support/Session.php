@@ -23,9 +23,8 @@ abstract class Session
 
   /**
    * @param string $index
-   * @return string|null
    */
-  public function get(string $index): ?string
+  public function get(string $index)
   {
     if (!empty($_SESSION[$index])) {
       return $_SESSION[$index];

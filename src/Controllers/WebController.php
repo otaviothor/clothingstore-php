@@ -131,13 +131,14 @@ class WebController extends Controller
       ]
     ];
 
-    // Session::put();
+    if (!Session::exists("categories")) {
+      Session::put("categories", $categories);
+    }
 
     echo $this->view->render("home", [
       "title" => "wear.up | home",
       "products" => $products,
       "brands" => $brands,
-      "categories" => $categories,
     ]);
   }
 

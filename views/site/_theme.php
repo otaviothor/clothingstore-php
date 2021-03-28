@@ -51,7 +51,9 @@
             </a>
             <div class="dropdown-menu">
               <?php
-                if (!empty($categories)) :
+                use Src\Support\Session;
+                $categories = Session::get("categories");
+                if (Session::exists("categories")) :
                   foreach ($categories as $category) :
                   ?>
                     <a class="dropdown-item" href="<?= $router->route("category.show", ["id" => $category["id"]]) ?>"><?= $category["category"] ?></a>
