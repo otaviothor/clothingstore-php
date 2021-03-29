@@ -45,8 +45,13 @@ $router->get("/", "ProfileController:index", "profile.index");
 $router->post("/update", "ProfileController:update", "profile.update");
 $router->post("/delete", "ProfileController:delete", "profile.delete");
 
+/** Routes profile */
+$router->namespace("Src\Controllers\Admin")->group("dashboard");
+$router->get("/", "AdminController:index", "admin.index");
+$router->get("/sair", "AdminController:logoff", "admin.logoff");
+
 /** Route errors */
-$router->group("ops");
+$router->namespace("Src\Controllers")->group("ops");
 $router->get("/{errcode}", "WebController:error", "web.error");
 
 /** Route proccess */
