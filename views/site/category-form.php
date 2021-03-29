@@ -21,7 +21,7 @@
 
   <hr class="mb-4">
 
-  <h2 class="mt-5 mb-3">categorias já cadastrados</h2>
+  <h2 class="mt-5 pb-5">categorias já cadastrados</h2>
 
   <div class="row">
     <?php

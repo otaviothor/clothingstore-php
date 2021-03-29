@@ -17,7 +17,7 @@
     <div class="col-md-8 order-md-1 text-dark">
       <form method="post" action="">
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 mb-3">
             <div class="form-group">
               <label for="name">nome completo</label>
               <input type="text" id="name" name="name" class="form-control" placeholder="blusa nike sb">
@@ -30,17 +30,19 @@
               <label for="category">categoria</label>
               <select class="form-control" id="category" name="category_id">
                 <?php
-                  if (!empty($categories)) :
-                    foreach ($categories as $category) :
-                    ?>
-                      <option value="<?= $category["id"] ?>"><?= $category["category"] ?></option>
-                    <?php
-                    endforeach;
-                  else :
-                    ?>
-                      <option>nenhuma categoria encontrada</option>
-                    <?php
-                  endif;
+                use Src\Support\Session;
+                $categories = Session::get("categories");
+                if ($categories) :
+                  foreach ($categories as $category) :
+                  ?>
+                    <option value="<?= $category["id"] ?>"><?= $category["category"] ?></option>
+                  <?php
+                  endforeach;
+                else :
+                  ?>
+                    <option>nenhuma categoria encontrada</option>
+                  <?php
+                endif;
                 ?>
               </select>
             </div>
