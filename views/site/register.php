@@ -52,7 +52,7 @@
                 <i class="fa fa-fw fa-eye btn-show-password-icon"></i>
               </span>
             </div>
-            <button class="btn btn-outline-light btn-block mt-4 next-step">próximo <i class="fas fa-chevron-right"></i></button>
+            <button class="btn btn-outline-light btn-block mt-4 next-step">próximo</button>
             <p class="mt-3 text-light text-right">
               já possui conta ?
               <a class="text-light" href="<?= $router->route('web.login') ?>">
@@ -77,8 +77,8 @@
               </label>
             </div>
             <div class="d-flex">
-              <button class="btn btn-outline-light btn-block mt-4 mr-1 prev-step"><i class=" fas fa-chevron-left"></i> anterior</button>
-              <button class="btn btn-outline-light btn-block mt-4 ml-1 next-step">próximo <i class=" fas fa-chevron-right"></i></button>
+              <button class="btn btn-light btn-block mt-4 mr-1 prev-step">anterior</button>
+              <button class="btn btn-outline-light btn-block mt-4 ml-1 next-step">próximo</button>
             </div>
           </div>
           <div class="step-3 d-none animate__animated animate__fadeIn">
@@ -91,8 +91,8 @@
               <input type="text" id="cnpj" name="cnpj" class="form-control" data-mask="00.000.000/0000-00">
             </div>
             <div class="d-flex">
-              <button class="btn btn-outline-light btn-block mt-4 mr-1 prev-step"><i class="fas fa-chevron-left"></i> anterior</button>
-              <button class="btn btn-outline-light btn-block mt-4 ml-1" type="submit">finalizar <i class="fas fa-check"></i></button>
+              <button class="btn btn-light btn-block mt-4 mr-1 prev-step">anterior</button>
+              <button class="btn btn-outline-light btn-block mt-4 ml-1" type="submit">finalizar</button>
             </div>
           </div>
         </form>

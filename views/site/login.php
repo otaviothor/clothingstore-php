@@ -49,7 +49,7 @@
                 </a>
               </p>
             </div>
-            <button class="btn btn-outline-light btn-block mt-4 next-step" type="submit">logar <i class="fas fa-check"></i></button>
+            <button class="btn btn-outline-light btn-block mt-4 next-step" type="submit">logar</button>
             <p class="mt-3 text-light text-center">
               não possui conta ?
               <a class="text-light" href="<?= $router->route('web.register') ?>">
@@ -71,7 +71,7 @@
                 </a>
               </p>
             </div>
-            <button class="btn btn-outline-light btn-block mt-4 next-step" type="submit">enviar solicitação <i class="fas fa-check"></i></button>
+            <button class="btn btn-outline-light btn-block mt-4 next-step" type="submit">enviar solicitação</button>
           </form>
         </div>
       </div>
