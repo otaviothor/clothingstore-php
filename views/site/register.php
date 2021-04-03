@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="<?= package("bootstrap/dist/css/bootstrap.min.css"); ?>" />
   <link rel="stylesheet" href="<?= package("@fortawesome/fontawesome-free/css/all.min.css"); ?>" />
   <link rel="stylesheet" href="<?= package("animate.css/animate.min.css"); ?>">
+  <link rel="stylesheet" href="<?= package("izitoast/dist/css/iziToast.min.css"); ?>">
   <link rel="stylesheet" href="<?= asset("style.min.css"); ?>" />
 </head>
 
@@ -31,7 +32,7 @@
           <i class="fas fa-chevron-left"></i> voltar
         </a>
         <h2 class="my-3 text-light">cadastre - se</h2>
-        <form>
+        <form method="post" action="<?= $router->route("profile.store"); ?>">
           <div class="step-1 d-block animate__animated animate__fadeIn">
             <div class="form-group text-light">
               <label for="name">nome completo <span class="text-danger">*</span></label>
@@ -65,13 +66,13 @@
               qual atividade você irá realizar com sua conta ?
             </div>
             <div class="form-check form-group text-light">
-              <input class="form-check-input" type="radio" name="user_type_id" id="type1" value="3" checked>
+              <input class="form-check-input" type="radio" name="user_type" id="type1" value="3" checked>
               <label class="form-check-label" for="type1">
                 comprar
               </label>
             </div>
             <div class="form-check form-group text-light">
-              <input class="form-check-input" type="radio" name="user_type_id" id="type2" value="2">
+              <input class="form-check-input" type="radio" name="user_type" id="type2" value="2">
               <label class="form-check-label" for="type2">
                 vender
               </label>
@@ -82,11 +83,11 @@
             </div>
           </div>
           <div class="step-3 d-none animate__animated animate__fadeIn">
-            <div class="form-group text-light">
+            <div class="form-group text-light cpf">
               <label for="cpf">cpf <span class="text-danger">*</span></label>
               <input type="text" id="cpf" name="cpf" class="form-control" data-mask="000.000.000-00">
             </div>
-            <div class="form-group text-light">
+            <div class="form-group text-light cnpj">
               <label for="cnpj">cnpj <span class="text-danger">*</span></label>
               <input type="text" id="cnpj" name="cnpj" class="form-control" data-mask="00.000.000/0000-00">
             </div>
@@ -103,8 +104,48 @@
   <script src="<?= package("jquery/dist/jquery.min.js"); ?>"></script>
   <script src="<?= package("bootstrap/dist/js/bootstrap.bundle.min.js"); ?>"></script>
   <script src="<?= package("jquery-mask-plugin/dist/jquery.mask.min.js"); ?>"></script>
+  <script src="<?= package("izitoast/dist/js/iziToast.min.js"); ?>"></script>
   <script src="<?= asset("scripts.min.js"); ?>"></script>
   <script src="<?= asset("login.min.js"); ?>"></script>
+  <script>
+    // $("form").submit((e) => {
+    //   e.preventDefault();
+    //   var form = $(this);
+
+    //   console.log(form.serialize());
+
+    //   // $.ajax({
+    //   // 	url: form.attr("action"),
+    //   // 	data: form.serialize(),
+    //   // 	type: "POST",
+    //   // 	dataType: "json",
+    //   // 	success: function(callback) {
+    //   // 		if (callback.error) {
+    //   // 			swal({
+    //   // 				title: callback.message,
+    //   // 				icon: "warning",
+    //   // 				buttons: [false, "Ok"],
+    //   // 			})
+    //   // 		} else {
+    //   // 			swal({
+    //   // 					title: callback.message,
+    //   // 					icon: "success",
+    //   // 					buttons: [false, "Ok"],
+    //   // 				})
+    //   // 				.then(areClosed => {
+    //   // 					if (areClosed) location.href = ''
+    //   // 				});
+    //   // 		}
+    //   // 	},
+    //   // 	error: function() {
+    //   // 		swal({
+    //   // 			title: "Erro na exclusão do produto!",
+    //   // 			icon: "error",
+    //   // 		});
+    //   // 	}
+    //   // });
+    // });
+  </script>
 
 </body>
 
