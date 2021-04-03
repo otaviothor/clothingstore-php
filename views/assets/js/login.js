@@ -19,7 +19,7 @@ $(() => {
         $(".step-2").removeClass("d-none").addClass("d-block");
         break;
       case 2:
-        if ($("input:radio[name=user_type_id]:checked").val() === 3) {
+        if ($("input:radio[name=user_type]:checked").val() === '3') {
           $(".cnpj").removeClass("d-block").addClass("d-none");
           $(".cpf").removeClass("d-none").addClass("d-block");
         } else {
