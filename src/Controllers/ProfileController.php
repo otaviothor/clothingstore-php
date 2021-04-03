@@ -2,6 +2,8 @@
 
 namespace Src\Controllers;
 
+use Src\Models\User;
+
 class ProfileController extends Controller
 {
   public function __construct($router)
@@ -25,5 +27,19 @@ class ProfileController extends Controller
       "title" => "otávio barreto",
       "data" => $data
     ]);
+  }
+
+  public function store(array $data): void
+  {
+    $userData = filter_var_array($data, FILTER_SANITIZE_STRING);
+
+    $user = new User();
+    $user->name = $data["name"];
+    $user->login = $data["login"];
+    $user->email = $data["email"];
+    $user->password = $data["password"];
+    $user->user_type = $data["user_type"];
+    $user->save();
+    print_r($user);
   }
 }
