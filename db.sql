@@ -56,6 +56,6 @@ CREATE TABLE products (
 
 ALTER TABLE cpf ADD CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE;
 
-ALTER TABLE cnpj ADD CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE;
+ALTER TABLE cnpj ADD CONSTRAINT fk_user_id_2 FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE;
 
-ALTER TABLE products ADD CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES category (id) ON DELETE CASCADE;
+ALTER TABLE products ADD CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE CASCADE;
