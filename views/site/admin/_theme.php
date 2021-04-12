@@ -28,9 +28,9 @@
     <div class="row">
       <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
         <div class="sidebar-sticky">
-          <ul class="nav flex-column">
+          <ul class="nav flex-column text-light">
             <li class="nav-item">
-              <a class="nav-link active" href="#">
+              <a class="nav-link" href="#">
                 <span data-feather="home"></span>
                 início
               </a>
