@@ -32,46 +32,6 @@ class ProductController extends Controller
         "name" => "Camiseta 4",
         "price" => rand(1, 200),
         "image" => "bg2.jpeg",
-      ], [
-        "id" => "5",
-        "name" => "Camiseta 5",
-        "price" => rand(1, 200),
-        "image" => "bg2.jpeg",
-      ], [
-        "id" => "6",
-        "name" => "Camiseta 6",
-        "price" => rand(1, 200),
-        "image" => "bg2.jpeg",
-      ], [
-        "id" => "7",
-        "name" => "Camiseta 7",
-        "price" => rand(1, 200),
-        "image" => "bg2.jpeg",
-      ], [
-        "id" => "8",
-        "name" => "Camiseta 8",
-        "price" => rand(1, 200),
-        "image" => "bg2.jpeg",
-      ], [
-        "id" => "9",
-        "name" => "Camiseta 9",
-        "price" => rand(1, 200),
-        "image" => "bg2.jpeg",
-      ], [
-        "id" => "10",
-        "name" => "Camiseta 10",
-        "price" => rand(1, 200),
-        "image" => "bg2.jpeg",
-      ], [
-        "id" => "11",
-        "name" => "Camiseta 11",
-        "price" => rand(1, 200),
-        "image" => "bg2.jpeg",
-      ], [
-        "id" => "12",
-        "name" => "Camiseta 12",
-        "price" => rand(1, 200),
-        "image" => "bg2.jpeg",
       ],
     ];
 
