@@ -12,6 +12,6 @@
     endif;
     ?>
   </div>
-  <!-- pagination component -->
+  <?php $v->insert("components/pagination", ["previous" => "", "next" => ""]); ?>
 </div>
 
