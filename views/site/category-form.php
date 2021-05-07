@@ -25,8 +25,7 @@
 
   <div class="row">
     <?php
-    use Src\Support\Session;
-    $categories = Session::get("categories");
+    $categories = Src\Support\Session::get("categories");
     if ($categories) :
       foreach ($categories as $category) :
         $v->insert("components/card-category", ["category" => $category]);

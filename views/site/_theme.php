@@ -51,8 +51,7 @@
             </a>
             <div class="dropdown-menu">
               <?php
-                use Src\Support\Session;
-                $categories = Session::get("categories");
+                $categories = Src\Support\Session::get("categories");
                 if ($categories) :
                   foreach ($categories as $category) :
                   ?>
@@ -139,21 +138,6 @@
   <script src="<?= package("sweetalert2/dist/sweetalert2.min.js"); ?>"></script>
   <script src="<?= asset("scripts.min.js"); ?>"></script>
   <?= $v->section("scripts"); ?>
-
-  <script>
-  <?php
-    // if ($flash() && $flashReturn = $flash()) {
-    //   $type = $flashReturn["type"];
-    //   $message = $flashReturn["message"];
-    //   echo "
-    //   iziToast.$type({
-    //     position: 'topLeft',
-    //     message: '$message'
-    //   });
-    //   ";
-    // }
-  ?>
-  </script>
 
 </body>
 
