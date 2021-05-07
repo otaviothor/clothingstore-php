@@ -3,7 +3,7 @@
 <div class="container my-5">
   <div class="row mb-5">
     <div class="col-12 d-flex flex-row justify-content-center align-items-center">
-      <img src="<?= asset("images/{$brand["image"]}"); ?>" alt="<?= $brand["name"] ?>" class="rounded-circle" width="150">
+      <img src="<?= asset("images/{$brand["image"]}", false); ?>" alt="<?= $brand["name"] ?>" class="rounded-circle" width="150">
       <div class="ml-5">
         <h4><?= $brand["name"] ?></h4>
         <p class="text-secondary mb-1"><?= $brand["email"] ?></p>

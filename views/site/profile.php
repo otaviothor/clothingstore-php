@@ -6,7 +6,7 @@
       <form>
           <div class="row d-flex justify-content-center">
             <div class="col-8">
-              <img src="<?= asset("images/profile/{$data["image"]}") ?>" class="img-fluid image-preview" alt="">
+              <img src="<?= asset("images/profile/{$data["image"]}", false) ?>" class="img-fluid image-preview" alt="">
             </div>
           </div>
           <div class="form-group">
