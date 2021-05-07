@@ -72,26 +72,6 @@ class ProductController extends Controller
         "name" => "Camiseta 12",
         "price" => rand(1, 200),
         "image" => "bg2.jpeg",
-      ], [
-        "id" => "13",
-        "name" => "Camiseta 13",
-        "price" => rand(1, 200),
-        "image" => "bg2.jpeg",
-      ], [
-        "id" => "14",
-        "name" => "Camiseta 14",
-        "price" => rand(1, 200),
-        "image" => "bg2.jpeg",
-      ], [
-        "id" => "15",
-        "name" => "Camiseta 15",
-        "price" => rand(1, 200),
-        "image" => "bg2.jpeg",
-      ], [
-        "id" => "16",
-        "name" => "Camiseta 16",
-        "price" => rand(1, 200),
-        "image" => "bg2.jpeg",
       ],
     ];
 
@@ -113,14 +93,14 @@ class ProductController extends Controller
   {
     $product = [
       "id" => $data["id"],
-      "name" => "Camiseta {$data["id"]}",
-      "description" => "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At similique delectus quisquam rerum distinctio! Ipsum illum assumenda, sit cupiditate nisi aperiam eveniet ex at consequatur voluptatum. Qui molestiae, voluptate in optio labore quae quaerat animi nesciunt! Quaerat, atque qui? Illum nobis, hic repellat excepturi voluptatum amet, libero molestiae molestias rerum, dolorem inventore veniam. Tempora doloribus ea commodi quis voluptatum voluptas nesciunt repudiandae aspernatur iure. Maxime sed quo repellendus possimus deleniti, sapiente voluptatum sequi quod commodi! A fugit ipsa asperiores odio vel repellendus at commodi beatae eum, expedita, dolore ea in natus excepturi. Dolor nostrum et modi consequuntur similique. Sapiente, corrupti?",
+      "name" => "camiseta {$data["id"]}",
+      "description" => "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At similique delectus quisquam rerum distinctio! Ipsum illum assumenda, sit cupiditate nisi aperiam eveniet ex at consequatur voluptatum. Qui molestiae, voluptate in optio labore quae quaerat animi nesciunt! Quaerat, atque qui? Illum nobis, hic repellat excepturi voluptatum amet, libero molestiae molestias rerum, dolorem inventore veniam.",
       "price" => rand(1, 200),
       "image" => "bg2.jpeg",
       "category_id" => $data["id"],
-      "category" => "Camiseta {$data["id"]}",
+      "category" => "categoria {$data["id"]}",
       "brand_id" => $data["id"],
-      "brand" => "Nike Inc. {$data["id"]}",
+      "brand" => "nike inc. {$data["id"]}",
     ];
 
     echo $this->view->render("product", [
