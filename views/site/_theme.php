@@ -23,6 +23,10 @@
 
 <body>
 
+  <div id="loading">
+    <div id="spinner"></div>
+  </div>
+
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand link-highlight" href="<?= $router->route("web.index"); ?>">

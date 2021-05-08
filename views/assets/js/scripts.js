@@ -1,4 +1,14 @@
 $(() => {
+  setTimeout(() => {
+    $("#loading").addClass("animate__animated");
+    $("#loading").addClass("animate__fadeOut");
+    setTimeout(() => {
+      $("#loading").removeClass("animate__animated");
+      $("#loading").removeClass("animate__fadeOut");
+      $("#loading").css("display", "none");
+    }, 800);
+  }, 1500);
+
   $(".btn-show-password").on("click", () => {
     $(".btn-show-password-icon").toggleClass("fa-eye fa-eye-slash");
     if ($("#password").attr("type") == "password") {
