@@ -5,8 +5,8 @@ setTimeout(() => {
     $("#loading").removeClass("animate__animated");
     $("#loading").removeClass("animate__fadeOut");
     $("#loading").css("display", "none");
-  }, 500);
-}, 500);
+  }, 700);
+}, 800);
 
 $(".btn-show-password").on("click", () => {
   $(".btn-show-password-icon").toggleClass("fa-eye fa-eye-slash");
