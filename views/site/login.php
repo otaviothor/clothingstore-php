@@ -84,7 +84,6 @@
   <script src="<?= package("jquery-mask-plugin/dist/jquery.mask.min.js"); ?>"></script>
   <script src="<?= package("izitoast/dist/js/iziToast.min.js"); ?>"></script>
   <script src="<?= asset("scripts.min.js"); ?>"></script>
-  <script src="<?= asset("login.min.js"); ?>"></script>
 
 </body>
 
