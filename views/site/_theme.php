@@ -64,7 +64,7 @@
                   endforeach;
                 else :
                   ?>
-                    <a class="dropdown-item" href="#">nenhuma categoria encontrada</a>
+                    <span class="dropdown-item">nenhuma categoria encontrada</span>
                   <?php
                 endif;
               ?>
