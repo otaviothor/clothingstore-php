@@ -81,7 +81,7 @@
             <a href="<?= $router->route("brand.index"); ?>" class="nav-link mr-3">marcas</a>
           </li>
 
-          <?php if(true) : ?>
+          <?php if(Src\Support\Session::get("user")) : ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                 conta
