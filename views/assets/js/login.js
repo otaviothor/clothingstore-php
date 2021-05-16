@@ -3,9 +3,27 @@ let step = 1;
 $(".next-step").on("click", (e) => {
   e.preventDefault();
 
-  if (!verifyFields(step)) {
+  if (!validateFields(step)) {
     iziToast.warning({
       message: "preencha todos os campos com *",
+      position: "topRight",
+    });
+
+    return false;
+  }
+
+  if (!validateEmail($("#email").val())) {
+    iziToast.warning({
+      message: "esse formato de e-mail é inválido",
+      position: "topRight",
+    });
+
+    return false;
+  }
+
+  if ($("#password").val().length < 6) {
+    iziToast.warning({
+      message: "a senha deve ter no mínimo 6 dígitos",
       position: "topRight",
     });
 
@@ -54,7 +72,7 @@ $(".btn-recover-password").on("click", (e) => {
   $(".form-recover-password").toggleClass("d-none");
 });
 
-const verifyFields = (step) => {
+const validateFields = (step) => {
   switch (step) {
     case 1:
       if (
@@ -79,3 +97,8 @@ const verifyFields = (step) => {
 
   return true;
 };
+
+const validateEmail = (email) => {
+  const regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return regex.test(email);
+}
