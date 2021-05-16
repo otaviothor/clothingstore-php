@@ -112,7 +112,11 @@
   <script>
     $("form").submit((e) => {
       e.preventDefault();
-      var form = $(this);
+      if (!validateDocument()) {
+        return false;
+      }
+
+      const form = $("form")
 
       console.log(form.serialize());
 
