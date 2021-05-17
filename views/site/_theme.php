@@ -59,7 +59,7 @@
                 if ($categories) :
                   foreach ($categories as $category) :
                   ?>
-                    <a class="dropdown-item" href="<?= $router->route("category.show", ["id" => $category["id"]]) ?>"><?= $category["category"] ?></a>
+                    <a class="dropdown-item" href="<?= $router->route("category.show", ["id" => $category->id]) ?>"><?= $category->category ?></a>
                   <?php
                   endforeach;
                 else :

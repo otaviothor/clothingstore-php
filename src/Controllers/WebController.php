@@ -3,6 +3,7 @@
 namespace Src\Controllers;
 
 use Src\Support\Session;
+use Src\Models\Category;
 
 class WebController extends Controller
 {
@@ -13,6 +14,7 @@ class WebController extends Controller
 
   public function index(): void
   {
+    $categories = (new Category())->find()->fetch(true);
     $brands = [
       [
         "id" => "1",
@@ -29,8 +31,6 @@ class WebController extends Controller
         "image" => "bg2.jpeg",
       ],
     ];
-
-    $categories = [];
 
     if (!Session::exists("categories")) {
       Session::put("categories", $categories);
