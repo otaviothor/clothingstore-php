@@ -46,10 +46,6 @@
               <input type="email" id="email" name="email" class="form-control">
             </div>
             <div class="form-group text-light">
-              <label for="login">nome de usuário <span class="text-danger">*</span></label>
-              <input type="login" id="login" name="login" class="form-control">
-            </div>
-            <div class="form-group text-light">
               <label for="password">senha <span class="text-danger">*</span></label>
               <input type="password" id="password" name="password" class="form-control">
               <span class="float-right text-dark btn-show-password" style="margin-top: -15px;">

@@ -38,7 +38,7 @@
           <h2 class="my-3 text-light">faça o login</h2>
           <form>
             <div class="form-group text-light">
-              <label for="email">e-mail ou nome de usuário <span class="text-danger">*</span></label>
+              <label for="email">e-mail <span class="text-danger">*</span></label>
               <input type="email" id="email" name="email" class="form-control">
             </div>
             <div class="form-group text-light">
