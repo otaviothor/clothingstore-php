@@ -15,4 +15,15 @@ class User extends DataLayer
   {
     parent::__construct("users", ["name", "email", "password", "user_type"]);
   }
+
+  public function document()
+  {
+    if ($this->user_type === "3") {
+      $document = (new CPF())->find("user_id = :uid", "uid={$this->id}")->fetch(true);
+    } else {
+      $document = (new CNPJ())->find("user_id = :uid", "uid={$this->id}")->fetch(true);
+    }
+
+    return $document;
+  }
 }

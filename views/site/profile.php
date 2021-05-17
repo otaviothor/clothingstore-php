@@ -6,7 +6,7 @@
       <form>
           <div class="row d-flex justify-content-center">
             <div class="col-8">
-              <img src="<?= asset("images/profile/{$data["image"]}", false) ?>" class="img-fluid image-preview" alt="">
+              <img src="<?php echo $user->image ? asset("images/profile/{$user->image}", false) : asset('images/profile/avatar.svg', false) ?>" class="img-fluid image-preview" alt="">
             </div>
           </div>
           <div class="form-group">
@@ -17,19 +17,19 @@
           </div>
           <div class="form-group">
             <label for="name">nome completo</label>
-            <input type="name" id="name" name="name" class="form-control" value="<?= $data["name"] ?>">
+            <input type="name" id="name" name="name" class="form-control" value="<?= $user->name ?>">
           </div>
           <div class="form-group">
             <label for="email">e-mail</label>
-            <input type="email" id="email" name="email" class="form-control" value="<?= $data["email"] ?>">
+            <input type="email" id="email" name="email" class="form-control" value="<?= $user->email ?>">
           </div>
           <div class="form-group">
-            <?php if($data["user_type"] === 2) : ?>
+            <?php if($user->user_type === "2") : ?>
               <label for="document">cnpj</label>
-              <input class="form-control" type="text" id="document" data-mask="00.000.000/0000-00" value="<?= $data["cnpj"] ?>">
-            <?php endif; if($data["user_type"] === 3) : ?>
+              <input class="form-control" type="text" id="document" data-mask="00.000.000/0000-00" value="<?= $document[0]->cnpj ?>">
+            <?php endif; if($user->user_type === "3") : ?>
               <label for="document">cpf</label>
-              <input class="form-control" type="text" id="document" data-mask="000.000.000-00" value="<?= $data["cpf"] ?>">
+              <input class="form-control" type="text" id="document" data-mask="000.000.000-00" value="<?= $document[0]->cpf ?>">
             <?php endif; ?>
             </div>
           <div class="form-group">
