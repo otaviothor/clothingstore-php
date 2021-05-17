@@ -5,6 +5,7 @@ namespace Src\Controllers;
 use Src\Models\User;
 use Src\Models\CNPJ;
 use Src\Models\CPF;
+use Src\Support\Session;
 use Exception;
 use stdClass;
 
@@ -45,18 +46,24 @@ class ProfileController extends Controller
       $user->password = password_hash($data["password"], PASSWORD_DEFAULT);
       $user->user_type = $data["user_type"];
       $user->save();
+      unset($data["password"]);
+      $data["id"] = $user->id;
 
       if ($data["user_type"] === "2") {
         $cnpj = new CNPJ();
         $cnpj->cnpj = $data["cnpj"];
         $cnpj->user_id = $user->id;
         $cnpj->save();
+        unset($data["cpf"]);
       } else {
         $cpf = new CPF();
         $cpf->cpf = $data["cpf"];
         $cpf->user_id = $user->id;
         $cpf->save();
+        unset($data["cnpj"]);
       }
+
+      Session::put("user", $data);
 
       echo $this->response(true, "usuário cadastrado com sucesso", [
         "redirect" => $this->router->route("web.index")
