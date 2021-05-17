@@ -46,6 +46,12 @@ $router->post("/store", "ProfileController:store", "profile.store");
 $router->post("/update", "ProfileController:update", "profile.update");
 $router->post("/delete", "ProfileController:delete", "profile.delete");
 
+/** Routes authentication */
+$router->group("auth");
+$router->post("/register", "AuthController:register", "auth.register");
+$router->post("/login", "AuthController:login", "auth.login");
+$router->get("/logout", "AuthController:logout", "auth.logout");
+
 /** Routes profile */
 $router->namespace("Src\Controllers\Admin")->group("dashboard");
 $router->get("/", "AdminController:index", "admin.index");

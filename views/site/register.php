@@ -35,7 +35,7 @@
           <i class="fas fa-chevron-left"></i> voltar
         </a>
         <h2 class="my-3 text-light">cadastre - se</h2>
-        <form action="<?= $router->route("profile.store") ?>">
+        <form action="<?= $router->route("auth.register") ?>">
           <div class="step-1 d-block animate__animated animate__fadeIn">
             <div class="form-group text-light">
               <label for="name">nome completo <span class="text-danger">*</span></label>
@@ -111,7 +111,6 @@
       if (!validateDocument()) {
         return false;
       }
-
       const form = $("form")
 
       $.ajax({

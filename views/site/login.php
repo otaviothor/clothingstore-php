@@ -36,7 +36,7 @@
         </a>
         <div class="form-login animate__animated animate__fadeIn">
           <h2 class="my-3 text-light">faça o login</h2>
-          <form>
+          <form action="<?= $router->route('auth.login') ?>">
             <div class="form-group text-light">
               <label for="email">e-mail <span class="text-danger">*</span></label>
               <input type="email" id="email" name="email" class="form-control">
@@ -87,6 +87,30 @@
   <script src="<?= package("jquery-mask-plugin/dist/jquery.mask.min.js"); ?>"></script>
   <script src="<?= package("izitoast/dist/js/iziToast.min.js"); ?>"></script>
   <script src="<?= asset("scripts.min.js"); ?>"></script>
+  <script>
+    $("form").submit((e) => {
+      e.preventDefault();
+      const form = $("form")
+
+      $.ajax({
+      	url: form.attr("action"),
+      	data: form.serialize(),
+      	type: "POST",
+      	dataType: "json",
+      	success: (callback) => {
+      		if (!callback.status) {
+      			iziToast.error({
+              message: callback.message,
+              position: "topRight",
+            });
+            return;
+      		}
+
+          window.location.href = callback.data.redirect
+      	}
+      });
+    });
+  </script>
 
 </body>
 
