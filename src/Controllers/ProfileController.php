@@ -68,8 +68,11 @@ class ProfileController extends Controller
       echo $this->response(true, "usuário cadastrado com sucesso", [
         "redirect" => $this->router->route("web.index")
       ]);
+      return;
     } catch (Exception $e) {
-      echo $this->response(false, "Erro ao cadastrar usuário");
+      echo $this->response(false, "erro ao cadastrar usuário", [
+        "error" => $e->getMessage
+      ]);
       return;
     }
   }
