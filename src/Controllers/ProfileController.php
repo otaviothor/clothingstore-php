@@ -6,6 +6,7 @@ use Src\Models\User;
 use Src\Models\CNPJ;
 use Src\Models\CPF;
 use Exception;
+use stdClass;
 
 class ProfileController extends Controller
 {
@@ -37,17 +38,15 @@ class ProfileController extends Controller
     try {
       $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
-      print_r($data).die;
-
       $user = new User();
       $user->name = $data["name"];
       $user->login = $data["login"];
       $user->email = $data["email"];
-      $user->password = $data["password"];
+      $user->password = password_hash($data["password"], PASSWORD_DEFAULT);
       $user->user_type = $data["user_type"];
       $user->save();
 
-      if ($userData["user_type"] === "2") {
+      if ($data["user_type"] === "2") {
         $cnpj = new CNPJ();
         $cnpj->cnpj = $data["cnpj"];
         $cnpj->user_id = $user->id;
@@ -58,6 +57,10 @@ class ProfileController extends Controller
         $cpf->user_id = $user->id;
         $cpf->save();
       }
+
+      echo $this->response(true, "usuário cadastrado com sucesso", [
+        "redirect" => $this->router->route("web.index")
+      ]);
     } catch (Exception $e) {
       echo $this->response(false, "Erro ao cadastrar usuário");
       return;
