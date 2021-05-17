@@ -19,6 +19,9 @@
 </head>
 
 <body class="register-bg">
+  <div id="loading">
+    <div id="spinner"></div>
+  </div>
 
   <div class="container-fluid">
     <div class="row">
@@ -32,7 +35,7 @@
           <i class="fas fa-chevron-left"></i> voltar
         </a>
         <h2 class="my-3 text-light">cadastre - se</h2>
-        <form method="post" action="<?= $router->route("profile.store"); ?>">
+        <form action="<?= $router->route("profile.store") ?>">
           <div class="step-1 d-block animate__animated animate__fadeIn">
             <div class="form-group text-light">
               <label for="name">nome completo <span class="text-danger">*</span></label>
@@ -57,13 +60,13 @@
             <p class="mt-3 text-light text-right">
               já possui conta ?
               <a class="text-light" href="<?= $router->route('web.login') ?>">
-                faça o logon
+                faça o login
               </a>
             </p>
           </div>
           <div class="step-2 d-none animate__animated animate__fadeIn">
             <div class="form-group text-light">
-              qual atividade você irá realizar com sua conta ?
+              qual atividade você irá realizar com sua conta ? <span class="text-danger">*</span>
             </div>
             <div class="form-check form-group text-light">
               <input class="form-check-input" type="radio" name="user_type" id="type1" value="3" checked>
@@ -106,45 +109,46 @@
   <script src="<?= package("jquery-mask-plugin/dist/jquery.mask.min.js"); ?>"></script>
   <script src="<?= package("izitoast/dist/js/iziToast.min.js"); ?>"></script>
   <script src="<?= asset("scripts.min.js"); ?>"></script>
-  <script src="<?= asset("login.min.js"); ?>"></script>
   <script>
-    // $("form").submit((e) => {
-    //   e.preventDefault();
-    //   var form = $(this);
+    $("form").submit((e) => {
+      e.preventDefault();
+      if (!validateDocument()) {
+        return false;
+      }
 
-    //   console.log(form.serialize());
+      const form = $("form")
 
-    //   // $.ajax({
-    //   // 	url: form.attr("action"),
-    //   // 	data: form.serialize(),
-    //   // 	type: "POST",
-    //   // 	dataType: "json",
-    //   // 	success: function(callback) {
-    //   // 		if (callback.error) {
-    //   // 			swal({
-    //   // 				title: callback.message,
-    //   // 				icon: "warning",
-    //   // 				buttons: [false, "Ok"],
-    //   // 			})
-    //   // 		} else {
-    //   // 			swal({
-    //   // 					title: callback.message,
-    //   // 					icon: "success",
-    //   // 					buttons: [false, "Ok"],
-    //   // 				})
-    //   // 				.then(areClosed => {
-    //   // 					if (areClosed) location.href = ''
-    //   // 				});
-    //   // 		}
-    //   // 	},
-    //   // 	error: function() {
-    //   // 		swal({
-    //   // 			title: "Erro na exclusão do produto!",
-    //   // 			icon: "error",
-    //   // 		});
-    //   // 	}
-    //   // });
-    // });
+      $.ajax({
+      	url: form.attr("action"),
+      	data: form.serialize(),
+      	type: "POST",
+      	dataType: "json",
+      	success: function(callback) {
+      		if (callback.error) {
+      			swal({
+      				title: callback.message,
+      				icon: "warning",
+      				buttons: [false, "Ok"],
+      			})
+      		} else {
+      			swal({
+      					title: callback.message,
+      					icon: "success",
+      					buttons: [false, "Ok"],
+      				})
+      				.then(areClosed => {
+      					if (areClosed) location.href = ''
+      				});
+      		}
+      	},
+      	error: function() {
+      		swal({
+      			title: "Erro na exclusão do produto!",
+      			icon: "error",
+      		});
+      	}
+      });
+    });
   </script>
 
 </body>

@@ -19,6 +19,9 @@
 </head>
 
 <body class="login-bg">
+  <div id="loading">
+    <div id="spinner"></div>
+  </div>
 
   <div class="mt-3 ml-3" style="position: absolute;">
     <a class="text-decoration-none" href="<?= $router->route('web.index') ?>">
@@ -32,7 +35,7 @@
           <i class="fas fa-chevron-left"></i> voltar
         </a>
         <div class="form-login animate__animated animate__fadeIn">
-          <h2 class="my-3 text-light">faça o logon</h2>
+          <h2 class="my-3 text-light">faça o login</h2>
           <form>
             <div class="form-group text-light">
               <label for="email">e-mail ou nome de usuário <span class="text-danger">*</span></label>
@@ -50,7 +53,7 @@
                 </a>
               </p>
             </div>
-            <button class="btn btn-outline-light btn-block mt-4 next-step" type="submit">logar</button>
+            <button class="btn btn-outline-light btn-block mt-4" type="submit">logar</button>
             <p class="mt-3 text-light text-center">
               não possui conta ?
               <a class="text-light" href="<?= $router->route('web.register') ?>">
@@ -72,7 +75,7 @@
                 </a>
               </p>
             </div>
-            <button class="btn btn-outline-light btn-block mt-4 next-step" type="submit">enviar solicitação</button>
+            <button class="btn btn-outline-light btn-block mt-4" type="submit">enviar solicitação</button>
           </form>
         </div>
       </div>
@@ -84,7 +87,6 @@
   <script src="<?= package("jquery-mask-plugin/dist/jquery.mask.min.js"); ?>"></script>
   <script src="<?= package("izitoast/dist/js/iziToast.min.js"); ?>"></script>
   <script src="<?= asset("scripts.min.js"); ?>"></script>
-  <script src="<?= asset("login.min.js"); ?>"></script>
 
 </body>
 

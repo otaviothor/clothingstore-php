@@ -3,6 +3,11 @@
 namespace Src\Controllers;
 
 use Src\Models\User;
+use Src\Models\CNPJ;
+use Src\Models\CPF;
+use Src\Support\Session;
+use Exception;
+use stdClass;
 
 class ProfileController extends Controller
 {
@@ -31,15 +36,41 @@ class ProfileController extends Controller
 
   public function store(array $data): void
   {
-    $userData = filter_var_array($data, FILTER_SANITIZE_STRING);
+    try {
+      $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
-    $user = new User();
-    $user->name = $data["name"];
-    $user->login = $data["login"];
-    $user->email = $data["email"];
-    $user->password = $data["password"];
-    $user->user_type = $data["user_type"];
-    $user->save();
-    print_r($user);
+      $user = new User();
+      $user->name = $data["name"];
+      $user->login = $data["login"];
+      $user->email = $data["email"];
+      $user->password = password_hash($data["password"], PASSWORD_DEFAULT);
+      $user->user_type = $data["user_type"];
+      $user->save();
+      unset($data["password"]);
+      $data["id"] = $user->id;
+
+      if ($data["user_type"] === "2") {
+        $cnpj = new CNPJ();
+        $cnpj->cnpj = $data["cnpj"];
+        $cnpj->user_id = $user->id;
+        $cnpj->save();
+        unset($data["cpf"]);
+      } else {
+        $cpf = new CPF();
+        $cpf->cpf = $data["cpf"];
+        $cpf->user_id = $user->id;
+        $cpf->save();
+        unset($data["cnpj"]);
+      }
+
+      Session::put("user", $data);
+
+      echo $this->response(true, "usuário cadastrado com sucesso", [
+        "redirect" => $this->router->route("web.index")
+      ]);
+    } catch (Exception $e) {
+      echo $this->response(false, "Erro ao cadastrar usuário");
+      return;
+    }
   }
 }

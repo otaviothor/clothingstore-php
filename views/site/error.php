@@ -29,8 +29,8 @@
       <?php
         $v->insert("components/error", [
           "message" => "a página que você pesquisou não está disponível",
-          "btnText" => "voltar a home",
-          "btnLink" => $router->route("web.index"),
+          "label" => "voltar a home",
+          "redirect" => $router->route("web.index"),
         ]);
       ?>
     </div>

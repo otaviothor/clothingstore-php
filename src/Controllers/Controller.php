@@ -17,8 +17,18 @@ abstract class Controller
     $this->view->addData(["router" => $this->router]);
   }
 
-  public function ajaxResponse(string $param, array $values): string
+  public function response(bool $status = true, string $message = null, array $data = []): string
   {
-    return json_encode([$param => $values]);
+    $callback["status"] = $status;
+
+    if ($message) {
+      $callback["message"] = $message;
+    }
+
+    if (sizeof($data) > 0) {
+      $callback["data"] = $data;
+    }
+
+    return json_encode($callback);
   }
 }
