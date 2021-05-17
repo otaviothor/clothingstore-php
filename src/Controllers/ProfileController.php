@@ -35,7 +35,9 @@ class ProfileController extends Controller
   public function store(array $data): void
   {
     try {
-      $userData = filter_var_array($data, FILTER_SANITIZE_STRING);
+      $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+      print_r($data).die;
 
       $user = new User();
       $user->name = $data["name"];
@@ -47,12 +49,12 @@ class ProfileController extends Controller
 
       if ($userData["user_type"] === "2") {
         $cnpj = new CNPJ();
-        $cnpj->cnpj = $userData["cnpj"];
+        $cnpj->cnpj = $data["cnpj"];
         $cnpj->user_id = $user->id;
         $cnpj->save();
       } else {
         $cpf = new CPF();
-        $cpf->cpf = $userData["cpf"];
+        $cpf->cpf = $data["cpf"];
         $cpf->user_id = $user->id;
         $cpf->save();
       }
