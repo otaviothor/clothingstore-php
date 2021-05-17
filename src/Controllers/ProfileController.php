@@ -41,7 +41,6 @@ class ProfileController extends Controller
 
       $user = new User();
       $user->name = $data["name"];
-      $user->login = $data["login"];
       $user->email = $data["email"];
       $user->password = password_hash($data["password"], PASSWORD_DEFAULT);
       $user->user_type = $data["user_type"];
