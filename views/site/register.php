@@ -118,38 +118,36 @@
 
       const form = $("form")
 
-      console.log(form.serialize());
-
-      // $.ajax({
-      // 	url: form.attr("action"),
-      // 	data: form.serialize(),
-      // 	type: "POST",
-      // 	dataType: "json",
-      // 	success: function(callback) {
-      // 		if (callback.error) {
-      // 			swal({
-      // 				title: callback.message,
-      // 				icon: "warning",
-      // 				buttons: [false, "Ok"],
-      // 			})
-      // 		} else {
-      // 			swal({
-      // 					title: callback.message,
-      // 					icon: "success",
-      // 					buttons: [false, "Ok"],
-      // 				})
-      // 				.then(areClosed => {
-      // 					if (areClosed) location.href = ''
-      // 				});
-      // 		}
-      // 	},
-      // 	error: function() {
-      // 		swal({
-      // 			title: "Erro na exclusão do produto!",
-      // 			icon: "error",
-      // 		});
-      // 	}
-      // });
+      $.ajax({
+      	url: form.attr("action"),
+      	data: form.serialize(),
+      	type: "POST",
+      	dataType: "json",
+      	success: function(callback) {
+      		if (callback.error) {
+      			swal({
+      				title: callback.message,
+      				icon: "warning",
+      				buttons: [false, "Ok"],
+      			})
+      		} else {
+      			swal({
+      					title: callback.message,
+      					icon: "success",
+      					buttons: [false, "Ok"],
+      				})
+      				.then(areClosed => {
+      					if (areClosed) location.href = ''
+      				});
+      		}
+      	},
+      	error: function() {
+      		swal({
+      			title: "Erro na exclusão do produto!",
+      			icon: "error",
+      		});
+      	}
+      });
     });
   </script>
 

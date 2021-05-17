@@ -123,4 +123,6 @@ const validateDocument = () => {
       return false;
     }
   }
+
+  return true;
 }
