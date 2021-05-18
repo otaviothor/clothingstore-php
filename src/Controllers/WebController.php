@@ -3,7 +3,9 @@
 namespace Src\Controllers;
 
 use Src\Support\Session;
+use Src\Models\User;
 use Src\Models\Category;
+use Src\Models\Product;
 
 class WebController extends Controller
 {
@@ -14,27 +16,13 @@ class WebController extends Controller
 
   public function index(): void
   {
-    $categories = (new Category())->find()->fetch(true);
-    $brands = [
-      [
-        "id" => "1",
-        "name" => "Marca top 1",
-        "image" => "avatar.svg",
-      ]
-    ];
-
-    $products = [
-      [
-        "id" => "1",
-        "name" => "Camiseta 1",
-        "price" => rand(1, 200),
-        "image" => "bg2.jpeg",
-      ],
-    ];
-
     if (!Session::exists("categories")) {
+      $categories = (new Category())->find()->fetch(true);
       Session::put("categories", $categories);
     }
+
+    $brands = (new User())->find("user_type = :utype", "utype=2")->limit(10)->fetch(true);
+    $products = (new Product())->find(null, null, "id, name, price, image")->limit(8)->fetch(true);
 
     echo $this->view->render("home", [
       "title" => "wear.up | home",
