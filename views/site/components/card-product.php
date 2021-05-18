@@ -3,7 +3,7 @@
     <img class="card-img-top" src="<?= asset("images/product/{$product->image}", false) ?>">
     <div class="card-body">
       <h5 class="card-title"><?= $product->name ?></h5>
-      <p class="card-text text-muted">R$ <?= $product->price ?></p>
+      <p class="card-text text-muted"><span class="text-uppercase">R$</span> <?= $product->price ?></p>
       <a href="<?= $router->route("product.show", ["id" => $product->id]) ?>" class="btn btn-outline-dark px-3">ver</a>
     </div>
   </div>

@@ -119,28 +119,14 @@
       	type: "POST",
       	dataType: "json",
       	success: function(callback) {
-      		if (callback.error) {
-      			swal({
-      				title: callback.message,
-      				icon: "warning",
-      				buttons: [false, "Ok"],
-      			})
-      		} else {
-      			swal({
-      					title: callback.message,
-      					icon: "success",
-      					buttons: [false, "Ok"],
-      				})
-      				.then(areClosed => {
-      					if (areClosed) location.href = ''
-      				});
+      		if (!callback.status) {
+      			iziToast.warning({
+              message: callback.message,
+              position: "topRight",
+            });
       		}
-      	},
-      	error: function() {
-      		swal({
-      			title: "Erro na exclusão do produto!",
-      			icon: "error",
-      		});
+
+          window.location.href = callback.data.redirect
       	}
       });
     });

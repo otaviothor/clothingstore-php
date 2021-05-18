@@ -21,8 +21,8 @@ class WebController extends Controller
       Session::put("categories", $categories);
     }
 
-    $brands = (new User())->find("user_type = :utype", "utype=2")->limit(10)->fetch(true);
-    $products = (new Product())->find(null, null, "id, name, price, image")->limit(8)->fetch(true);
+    $brands = (new User())->find("user_type = :utype", "utype=2")->limit(6)->order("RAND()")->fetch(true);
+    $products = (new Product())->find(null, null, "id, name, price, image")->limit(4)->order("RAND()")->fetch(true);
 
     echo $this->view->render("home", [
       "title" => "wear.up | home",
