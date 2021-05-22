@@ -17,17 +17,6 @@ $(".btn-show-password").on("click", () => {
   }
 });
 
-$(".upload-image").on("change", (e) => {
-  const files = e.target.files;
-  if (files && files[0]) {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      $(".image-preview").attr("src", reader.result);
-    };
-    reader.readAsDataURL(files[0]);
-  }
-});
-
 $(() => {
   $('[data-toggle="tooltip"]').tooltip();
 });

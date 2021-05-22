@@ -6,6 +6,7 @@ use Src\Support\Session;
 use Src\Models\User;
 use Src\Models\Category;
 use Src\Models\Product;
+use stdClass;
 
 class WebController extends Controller
 {
@@ -17,7 +18,16 @@ class WebController extends Controller
   public function index(): void
   {
     if (!Session::exists("categories")) {
-      $categories = (new Category())->find()->fetch(true);
+      $categoriesData = (new Category())->find()->fetch(true);
+      $categories = [];
+
+      foreach ($categoriesData as $key => $categoryData) {
+        $categoryObject = new stdClass();
+        $categoryObject->id = $categoryData->id;
+        $categoryObject->category = $categoryData->category;
+        $categories[$key] = $categoryObject;
+      }
+
       Session::put("categories", $categories);
     }
 

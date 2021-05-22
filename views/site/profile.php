@@ -6,7 +6,7 @@
       <form>
           <div class="row d-flex justify-content-center">
             <div class="col-8">
-              <img src="<?php echo $user->image ? asset("images/profile/{$user->image}", false) : asset('images/profile/avatar.svg', false) ?>" class="img-fluid image-preview" alt="">
+              <img src="<?php echo $user->image ? asset("images/profile/{$user->image}", false) : asset('images/profile/avatar.svg', false) ?>" class="img-fluid image-view" alt="<?= $user->name ?>">
             </div>
           </div>
           <div class="form-group">
@@ -44,3 +44,83 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="modal-cropper">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-center">
+            <img src="" id="image-crop" alt="image-crop">
+          </div>
+        </div>
+        <div class="text-right mt-3">
+          <button class="btn btn-dark close-modal" data-dismiss="modal">cancelar</button>
+          <button id="crop" class="btn btn-outline-dark ml-2">cortar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<?php
+$v->start("scripts");
+?>
+<script>
+  const modal = $('#modal-cropper');
+  const image = document.getElementById('image-crop');
+  let cropper;
+  $(".upload-image").on("change", (e) => {
+    const files = e.target.files;
+
+    const done = (url) => {
+      image.src = url;
+      modal.modal('show');
+    };
+
+    if (files && files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        done(reader.result);
+      };
+      reader.readAsDataURL(files[0]);
+    }
+  });
+
+  modal
+    .on('shown.bs.modal', () => {
+      cropper = new Croppr(image, {
+        aspectRatio: 1 / 1,
+        viewMode: 3,
+        preview: '.image-preview-crop',
+      });
+    })
+    .on('hidden.bs.modal', () => {
+      cropper.destroy();
+      cropper = null;
+    });
+
+  $('#crop').on('click', () => {
+    canvas = cropper.getValue()
+    console.log(canvas);
+    // canvas = cropper.getCroppedCanvas({
+    //   width: 281,
+    //   height: 255,
+    // });
+    // canvas.toBlob((b) => {
+    //   url = URL.createObjectURL(b);
+    //   const reader = new FileReader();
+    //   reader.readAsDataURL(b);
+    //   reader.onloadend = () => {
+    //     const base64 = reader.result;
+    //     console.log(base64);
+    //     $('.image-view').attr('src', base64);
+    //     modal.modal('hide');
+    //   };
+    // });
+  });
+
+</script>
+<?php
+$v->end();
+?>
