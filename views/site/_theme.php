@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="<?= package("izitoast/dist/css/iziToast.min.css"); ?>" />
   <link rel="stylesheet" href="<?= package("sweetalert2/dist/sweetalert2.min.css"); ?>" />
   <link rel="stylesheet" href="<?= package("animate.css/animate.min.css"); ?>">
-  <link rel="stylesheet" href="<?= package("croppr/dist/croppr.min.css"); ?>">
+  <link rel="stylesheet" href="<?= package("cropperjs/dist/cropper.min.css"); ?>">
   <?= $v->section("styles"); ?>
   <link rel="stylesheet" href="<?= asset("style.min.css"); ?>" />
 </head>
@@ -141,7 +141,7 @@
   <script src="<?= package("jquery-mask-plugin/dist/jquery.mask.min.js"); ?>"></script>
   <script src="<?= package("izitoast/dist/js/iziToast.min.js"); ?>"></script>
   <script src="<?= package("sweetalert2/dist/sweetalert2.min.js"); ?>"></script>
-  <script src="<?= package("croppr/dist/croppr.min.js"); ?>"></script>
+  <script src="<?= package("cropperjs/dist/cropper.min.js"); ?>"></script>
   <script src="<?= asset("scripts.min.js"); ?>"></script>
   <?= $v->section("scripts"); ?>
 
