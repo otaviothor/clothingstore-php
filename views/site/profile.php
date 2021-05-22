@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row d-flex justify-content-center my-5">
     <div class="col-lg-5 col-md-8 col-sm-12 bg-dark p-5 rounded-lg text-light">
-      <form>
+      <form action="<?= $router->route("profile.update"); ?>" method="post">
           <div class="row d-flex justify-content-center">
             <div class="col-8">
               <img src="<?php echo $user->image ? asset("images/profile/{$user->image}", false) : asset('images/profile/avatar.svg', false) ?>" class="img-fluid image-view" alt="<?= $user->name ?>">
@@ -39,7 +39,7 @@
               <i class="fa fa-fw fa-eye btn-show-password-icon"></i>
             </span>
           </div>
-          <button class="btn btn-outline-light btn-block mt-4 next-step" type="submit">atualizar dados</button>
+          <button class="btn btn-outline-light btn-block mt-4" type="submit">atualizar dados</button>
       </form>
     </div>
   </div>
@@ -89,7 +89,7 @@ $v->start("scripts");
 
   modal
     .on('shown.bs.modal', () => {
-      cropper = new Croppr(image, {
+      cropper = new Cropper(image, {
         aspectRatio: 1 / 1,
         viewMode: 3,
         preview: '.image-preview-crop',
@@ -101,23 +101,19 @@ $v->start("scripts");
     });
 
   $('#crop').on('click', () => {
-    canvas = cropper.getValue()
-    console.log(canvas);
-    // canvas = cropper.getCroppedCanvas({
-    //   width: 281,
-    //   height: 255,
-    // });
-    // canvas.toBlob((b) => {
-    //   url = URL.createObjectURL(b);
-    //   const reader = new FileReader();
-    //   reader.readAsDataURL(b);
-    //   reader.onloadend = () => {
-    //     const base64 = reader.result;
-    //     console.log(base64);
-    //     $('.image-view').attr('src', base64);
-    //     modal.modal('hide');
-    //   };
-    // });
+    canvas = cropper.getCroppedCanvas();
+    canvas.toBlob((b) => {
+      url = URL.createObjectURL(b);
+      const reader = new FileReader();
+      reader.readAsDataURL(b);
+      reader.onloadend = () => {
+        const base64 = reader.result;
+        console.log(url);
+        $('.image-view').attr('src', base64);
+        $('#image').attr('value', url);
+        modal.modal('hide');
+      };
+    });
   });
 
 </script>

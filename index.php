@@ -42,7 +42,6 @@ $router->get("/{id}", "BrandController:show", "brand.show");
 /** Routes profile */
 $router->group("perfil");
 $router->get("/", "ProfileController:index", "profile.index");
-$router->post("/store", "ProfileController:store", "profile.store");
 $router->post("/update", "ProfileController:update", "profile.update");
 $router->post("/delete", "ProfileController:delete", "profile.delete");
 

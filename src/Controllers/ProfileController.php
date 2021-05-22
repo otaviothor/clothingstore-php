@@ -31,6 +31,8 @@ class ProfileController extends Controller
 
   public function update(array $data): void
   {
-
+    $image = $_FILES;
+    var_dump($image);
+    var_dump($data);
   }
 }
