@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row d-flex justify-content-center my-5">
     <div class="col-lg-5 col-md-8 col-sm-12 bg-dark p-5 rounded-lg text-light">
-      <form action="<?= $router->route("profile.update"); ?>" method="post">
+      <form action="<?= $router->route("profile.update"); ?>" method="post" enctype="multipart/form-data">
           <div class="row d-flex justify-content-center">
             <div class="col-8">
               <img src="<?php echo $user->image ? asset("images/profile/{$user->image}", false) : asset('images/profile/avatar.svg', false) ?>" class="img-fluid image-view" alt="<?= $user->name ?>">
