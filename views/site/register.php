@@ -121,9 +121,11 @@
       	success: function(callback) {
       		if (!callback.status) {
       			iziToast.warning({
-              message: callback.message,
+              message: callback.data.error,
               position: "topRight",
             });
+
+            return;
       		}
 
           window.location.href = callback.data.redirect

@@ -21,11 +21,13 @@ class WebController extends Controller
       $categoriesData = (new Category())->find()->fetch(true);
       $categories = [];
 
-      foreach ($categoriesData as $key => $categoryData) {
-        $categoryObject = new stdClass();
-        $categoryObject->id = $categoryData->id;
-        $categoryObject->category = $categoryData->category;
-        $categories[$key] = $categoryObject;
+      if ($categoriesData) {
+        foreach ($categoriesData as $key => $categoryData) {
+          $categoryObject = new stdClass();
+          $categoryObject->id = $categoryData->id;
+          $categoryObject->category = $categoryData->category;
+          $categories[$key] = $categoryObject;
+        }
       }
 
       Session::put("categories", $categories);

@@ -21,6 +21,10 @@ class AuthController extends Controller
     try {
       $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
+      if ((new User())->find("email = :email", "email=" . $data["email"])->count() >= 1) {
+        throw new Exception("esse email já está cadastrado");
+      }
+
       $user = new User();
       $user->name = $data["name"];
       $user->email = $data["email"];
@@ -48,7 +52,7 @@ class AuthController extends Controller
       return;
     } catch (Exception $e) {
       echo $this->response(false, "erro ao cadastrar usuário", [
-        "error" => $e->getMessage
+        "error" => $e->getMessage()
       ]);
       return;
     }
