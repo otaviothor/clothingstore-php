@@ -46,12 +46,12 @@ class AuthController extends Controller
 
       Session::put("user", $user->id);
 
-      echo $this->response(true, "usuário cadastrado com sucesso", [
+      echo $this->response(true, 201, "usuário cadastrado com sucesso", [
         "redirect" => $this->router->route("web.index")
       ]);
       return;
     } catch (Exception $e) {
-      echo $this->response(false, "erro ao cadastrar usuário", [
+      echo $this->response(false, 500, "erro ao cadastrar usuário", [
         "error" => $e->getMessage()
       ]);
       return;
@@ -64,18 +64,18 @@ class AuthController extends Controller
     $password = filter_var($data["password"], FILTER_DEFAULT);
 
     if (!$email || !$password) {
-      echo $this->response(false, "informe seu e-mail e senha para logar");
+      echo $this->response(false, 401, "informe seu e-mail e senha para logar");
       return;
     }
 
     $user = (new User())->find("email = :email", "email={$email}")->fetch();
     if (!$user || !password_verify($password, $user->password)) {
-      echo $this->response(false, "e-mail ou senha inválido");
+      echo $this->response(false, 401, "e-mail ou senha inválido");
       return;
     }
 
     Session::put("user", $user->id);
-    echo $this->response(true, "usuário logado com sucesso", [
+    echo $this->response(true, 200, "usuário logado com sucesso", [
       "redirect" => $this->router->route("web.index")
     ]);
   }

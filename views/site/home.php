@@ -16,7 +16,7 @@
         $v->insert("components/card-brand", ["brand" => $brand]);
       endforeach;
     else :
-      $v->insert("components/404-not-found", ["message" => "nenhuma marca encontrada"]);
+      $v->insert("components/empty", ["message" => "nenhuma marca encontrada"]);
     endif;
     ?>
   </div>
@@ -40,7 +40,7 @@
         $v->insert("components/card-product", ["product" => $product]);
       endforeach;
     else :
-      $v->insert("components/404-not-found", ["message" => "nenhum produto encontrado"]);
+      $v->insert("components/empty", ["message" => "nenhum produto encontrado"]);
     endif;
     ?>
   </div>

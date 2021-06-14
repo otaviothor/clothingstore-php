@@ -4,6 +4,7 @@ namespace Src\Controllers;
 
 use CoffeeCode\Router\Router;
 use League\Plates\Engine;
+use Src\Support\HttpStatusCode;
 
 abstract class Controller
 {
@@ -17,8 +18,10 @@ abstract class Controller
     $this->view->addData(["router" => $this->router]);
   }
 
-  public function response(bool $status = true, string $message = null, array $data = []): string
+  public function response(bool $status = true, int $code = 200, string $message = null, array $data = []): string
   {
+    HttpStatusCode::setStatusCode($code);
+
     $callback["status"] = $status;
 
     if ($message) {
